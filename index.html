@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dashboard Tito Affiliator</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#3b6cf6"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tito Affiliator"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><link rel="icon" type="image/png" href="icons/icon-192.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<script>
+/* Penyimpanan lokal: meniru API db yang dipakai aplikasi, data disimpan di localStorage perangkat ini. */
+window.PWA_MODE = true;
+(function () {
+  var SEED = {"products": {"p1": {"rank": 1, "name": "Takara MS-04K tripod mini", "brand": "Takara", "price": 77000, "tier": "rendah", "sold": 250, "source": "Listing Tokopedia (terjual 250+)", "note": "Hanya produk ini yang menampilkan angka terjual.", "checks": {"price": false, "stock": false, "commission": false, "link": false}, "selected": false}, "p2": {"rank": 2, "name": "MIXIO Ring Light 45 cm + tripod 200 cm", "brand": "MIXIO", "price": 388000, "tier": "menengah", "sold": null, "source": "mybest.id, peringkat ring light #1 (diperbarui 16 Apr 2026)", "note": "Peringkat dari daftar ulasan, angka terjual belum ada.", "checks": {"price": false, "stock": false, "commission": false, "link": false}, "selected": false}, "p3": {"rank": 3, "name": "INBEX Ring Light LED 26 cm + tripod 210 cm", "brand": "INBEX", "price": 169000, "tier": "menengah-rendah", "sold": null, "source": "mybest.id, peringkat ring light #2", "note": "Peringkat dari daftar ulasan, angka terjual belum ada.", "checks": {"price": false, "stock": false, "commission": false, "link": false}, "selected": false}, "p4": {"rank": 4, "name": "Yunteng Tripod 3366", "brand": "Yunteng", "price": 89500, "tier": "rendah", "sold": null, "source": "mybest.id, tripod #1 menurut popularitas Shopee (tanpa tanggal)", "note": "Tanggal daftar tidak tertera, harga bisa sudah berubah.", "checks": {"price": false, "stock": false, "commission": false, "link": false}, "selected": false}, "p5": {"rank": 5, "name": "Takara Rover 50", "brand": "Takara", "price": 292000, "tier": "menengah-rendah", "sold": null, "source": "mybest.id, tripod #3", "note": "Peringkat dari daftar ulasan, angka terjual belum ada.", "checks": {"price": false, "stock": false, "commission": false, "link": false}, "selected": false}}, "announcements": {"a1": {"level": "tinggi", "title": "Komisi dan stok kelima produk belum diperiksa", "body": "Harga dan stok di halaman toko bisa berubah dalam hitungan hari, dan persentase komisi belum diketahui untuk semua produk.", "reco": "Sebelum memilih, cek harga, stok, komisi, dan link affiliate di toko. Centang hasilnya di blok 2.", "status": "terbuka", "date": "2026-11-23"}, "a2": {"level": "sedang", "title": "Peringkat produk masih estimasi", "body": "Hanya produk peringkat 1 yang punya angka terjual. Produk 2 sampai 5 diurutkan dari daftar ulasan, bukan dari data penjualan.", "reco": "Saat membuka pusat produk affiliate, catat angka terjual di tiap produk. Riset memperbarui peringkat di laporan berikutnya.", "status": "terbuka", "date": "2026-11-23"}, "a3": {"level": "sedang", "title": "Jadwal posting masih sementara", "body": "Jam posting memakai pola umum pengguna Indonesia, belum data akun Anda.", "reco": "Pakai jadwal 14 hari, lalu Analytics membaca TikTok Studio dan Marketing mengunci jadwal.", "status": "terbuka", "date": "2026-11-23"}, "a4": {"level": "sedang", "title": "Empat video per hari menambah risiko klaim teknis keliru", "body": "Dua topik (grid dan kunci fokus-eksposur) masih menunggu sumber. Naskah tanpa sumber hanya boleh memuat saran umum yang diberi label.", "reco": "Tidak ada naskah rilis tanpa pemeriksaan Pemeriksa Fakta. Topik tanpa sumber ditunda.", "status": "terbuka", "date": "2026-11-23"}, "a5": {"level": "info", "title": "Data TikTok dan komisi diisi manual", "body": "Aplikasi belum tersambung otomatis ke akun TikTok maupun Shopee Affiliate. Angka masuk lewat form atau tempel baris di Beranda.", "reco": "Sisihkan sekitar 5 menit, dua kali seminggu, untuk menyalin angka dari TikTok Studio dan dashboard affiliate.", "status": "terbuka", "date": "2026-11-23"}, "a6": {"level": "info", "title": "Izin foto resmi merek: keputusan Anda diizinkan", "body": "Carousel memakai foto resmi merek. Merek atau toko bisa meminta foto diturunkan.", "reco": "Simpan sumber foto di tiap carousel dan siap menurunkan jika diminta.", "status": "terbuka", "date": "2026-11-23"}}, "tasks": {"t01": {"div": "analytics", "title": "Kumpulkan baseline 14 hari (25 Nov sampai 8 Des)", "note": "", "status": "doing", "date": "2026-11-23"}, "t02": {"div": "analytics", "title": "Baca TikTok Studio: jam paling aktif pengikut", "note": "Setelah 3 video pertama tayang", "status": "todo", "date": "2026-11-23"}, "t03": {"div": "analytics", "title": "Laporan kendala Siklus 1 dan 2", "note": "", "status": "done", "date": "2026-11-23"}, "t04": {"div": "riset", "title": "Laporan referensi 1: lima produk berperingkat", "note": "", "status": "done", "date": "2026-11-23"}, "t05": {"div": "riset", "title": "Laporan referensi 2", "note": "Terbit sebelum upload berikutnya", "status": "todo", "date": "2026-11-23"}, "t06": {"div": "riset", "title": "Cari angka terjual untuk produk 2 sampai 5", "note": "", "status": "todo", "date": "2026-11-23"}, "t07": {"div": "riset", "title": "Tetapkan batas rupiah kelas harga", "note": "Usulan ada, menunggu keputusan Anda", "status": "tunggu", "date": "2026-11-23"}, "t08": {"div": "marketing", "title": "Jadwal posting tetap versi 1", "note": "Sementara, diuji 14 hari", "status": "done", "date": "2026-11-23"}, "t09": {"div": "marketing", "title": "Hook untuk 4 video hari pertama", "note": "", "status": "doing", "date": "2026-11-23"}, "t10": {"div": "marketing", "title": "Kalender upload carousel: 25, 27, 29 Nov, 1, 3 Des", "note": "", "status": "done", "date": "2026-11-23"}, "t11": {"div": "konten", "title": "Naskah: cek tripod holder", "note": "", "status": "done", "date": "2026-11-23"}, "t12": {"div": "konten", "title": "Naskah: kenapa video wajah gelap", "note": "", "status": "done", "date": "2026-11-23"}, "t13": {"div": "konten", "title": "Naskah: grid dan rule of thirds", "note": "Menunggu sumber", "status": "todo", "date": "2026-11-23"}, "t14": {"div": "konten", "title": "Naskah: kunci fokus dan eksposur (AE/AF)", "note": "Menunggu sumber", "status": "todo", "date": "2026-11-23"}, "t15": {"div": "konten", "title": "Carousel 7 slide untuk produk pilihan", "note": "Mulai setelah Anda memilih dan meminta", "status": "tunggu", "date": "2026-11-23"}, "t16": {"div": "risk", "title": "Periksa klaim naskah Siklus 1 dan 2", "note": "", "status": "done", "date": "2026-11-23"}, "t17": {"div": "risk", "title": "Kumpulkan KPI semua divisi menjadi target mingguan dan bulanan", "note": "", "status": "doing", "date": "2026-11-23"}, "t18": {"div": "risk", "title": "Rekap KPI minggu 1 (25 Nov sampai 1 Des)", "note": "Terbit 2 Des", "status": "todo", "date": "2026-11-23"}}, "kpis": {"k01": {"div": "analytics", "owner": "Divisi", "name": "Laporan mingguan performa terkirim", "type": "proses", "unit": "laporan", "weekly": 1, "monthly": 4, "wkActual": null, "moActual": null, "def": "Ringkasan tayangan, penonton selesai, klik jadi beli, plus rekomendasi.", "src": "Beranda blok 3 dan 4"}, "k02": {"div": "analytics", "owner": "Divisi", "name": "Data TikTok dan komisi diperbarui di aplikasi", "type": "proses", "unit": "kali", "weekly": 2, "monthly": 8, "wkActual": null, "moActual": null, "def": "Angka disalin dari TikTok Studio dan dashboard affiliate ke aplikasi.", "src": "TikTok Studio, dashboard Shopee Affiliate"}, "k03": {"div": "analytics", "owner": "Kepala Analytics", "name": "Rekomendasi tindak lanjut per laporan", "type": "proses", "unit": "rekomendasi", "weekly": 3, "monthly": 12, "wkActual": null, "moActual": null, "def": "Jumlah rekomendasi yang bisa dikerjakan di tiap laporan mingguan.", "src": "Laporan mingguan"}, "k04": {"div": "analytics", "owner": "Pemantau Kendala", "name": "Kendala dicatat ke Risk dalam 24 jam", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": null, "moActual": null, "def": "Persentase kendala terdeteksi yang sudah menjadi pengumuman dalam 24 jam.", "src": "Pengumuman Risk & Solution"}, "k05": {"div": "analytics", "owner": "Analytics", "name": "Median tayangan 5 video terbaru", "type": "hasil", "unit": "tayangan", "weekly": null, "monthly": null, "wkActual": null, "moActual": null, "def": "Nilai tengah tayangan lima video terakhir. Target diisi setelah baseline.", "src": "Beranda blok 3", "auto": "views"}, "k06": {"div": "analytics", "owner": "Analytics", "name": "Klik jadi beli", "type": "hasil", "unit": "%", "weekly": null, "monthly": null, "wkActual": null, "moActual": null, "def": "Klik link yang berujung pembelian dibagi seluruh klik.", "src": "Beranda blok 4", "auto": "konversi"}, "k07": {"div": "analytics", "owner": "Analytics", "name": "Komisi 7 hari terakhir", "type": "hasil", "unit": "Rp", "weekly": null, "monthly": null, "wkActual": null, "moActual": null, "def": "Jumlah komisi tercatat dalam 7 hari terakhir.", "src": "Beranda blok 4", "auto": "komisi"}, "k08": {"div": "analytics", "owner": "Analytics", "name": "Rata-rata selesai ditonton", "type": "hasil", "unit": "%", "weekly": null, "monthly": null, "wkActual": null, "moActual": null, "def": "Persentase penonton yang menonton video sampai habis.", "src": "TikTok Studio"}, "k09": {"div": "analytics", "owner": "Analytics", "name": "Follower baru per minggu", "type": "hasil", "unit": "follower", "weekly": null, "monthly": null, "wkActual": null, "moActual": null, "def": "Pertambahan pengikut dalam 7 hari.", "src": "TikTok Studio"}, "k10": {"div": "riset", "owner": "Divisi", "name": "Laporan 5 produk berperingkat terkirim", "type": "proses", "unit": "laporan", "weekly": 3, "monthly": 15, "wkActual": null, "moActual": null, "def": "Laporan referensi tiap 2 hari, lima produk, dijual di Indonesia.", "src": "Beranda blok 1"}, "k11": {"div": "riset", "owner": "Kepala Riset", "name": "Laporan lengkap: harga, kelas, sumber, tautan", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": null, "moActual": null, "def": "Persentase produk di laporan yang kolomnya terisi semua.", "src": "Laporan referensi"}, "k12": {"div": "riset", "owner": "Pencari Produk Laris", "name": "Produk dengan angka terjual terverifikasi", "type": "mutu", "unit": "%", "weekly": 60, "monthly": 80, "wkActual": 20, "moActual": 20, "def": "Produk di laporan terakhir yang punya angka terjual dari halaman toko.", "src": "Halaman toko, pusat produk affiliate"}, "k13": {"div": "riset", "owner": "Klasifikasi Harga", "name": "Produk berlabel kelas harga", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": 100, "moActual": 100, "def": "Persentase produk yang sudah punya kelas harga.", "src": "Laporan referensi"}, "k14": {"div": "riset", "owner": "Analis Spesifikasi", "name": "Spesifikasi cocok dengan halaman resmi merek", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": null, "moActual": null, "def": "Spesifikasi yang dicocokkan ke situs atau halaman resmi merek.", "src": "Halaman resmi merek"}, "k15": {"div": "riset", "owner": "Cek Harga & Stok", "name": "Harga dan stok dicek 24 jam sebelum dipilih", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": null, "moActual": null, "def": "Produk terpilih yang harga dan stoknya dicek sebelum upload.", "src": "Halaman toko"}, "k16": {"div": "marketing", "owner": "Divisi", "name": "Slot jadwal tetap terpenuhi", "type": "proses", "unit": "%", "weekly": 90, "monthly": 90, "wkActual": null, "moActual": null, "def": "Konten tayang di slot jadwal tetap pada hari itu.", "src": "Jadwal di halaman Marketing, TikTok Studio"}, "k17": {"div": "marketing", "owner": "Kepala Marketing", "name": "Kalender upload 7 hari ke depan tersusun", "type": "proses", "unit": "kalender", "weekly": 1, "monthly": 4, "wkActual": 1, "moActual": null, "def": "Kalender upload carousel dan video tersedia untuk 7 hari ke depan.", "src": "Halaman Marketing"}, "k18": {"div": "marketing", "owner": "Ahli Hook", "name": "Video punya 1 hook final dan 2 cadangan", "type": "proses", "unit": "video", "weekly": 28, "monthly": 120, "wkActual": null, "moActual": null, "def": "Setiap video punya hook terpilih dan dua alternatif.", "src": "Naskah video"}, "k19": {"div": "konten", "owner": "Divisi", "name": "Video edukasi selesai dan lolos periksa", "type": "proses", "unit": "video", "weekly": 28, "monthly": 120, "wkActual": null, "moActual": null, "def": "Video animasi yang selesai dan sudah lolos Pemeriksa Fakta.", "src": "Antrean produksi"}, "k20": {"div": "konten", "owner": "Divisi", "name": "Carousel selesai dalam 24 jam setelah produk dipilih", "type": "proses", "unit": "carousel", "weekly": 3, "monthly": 15, "wkActual": null, "moActual": null, "def": "Carousel 7 slide siap diunggah dalam 24 jam setelah permintaan Anda.", "src": "Beranda blok 2"}, "k21": {"div": "konten", "owner": "Kepala Produksi", "name": "Konten lolos periksa fakta tanpa revisi besar", "type": "mutu", "unit": "%", "weekly": 90, "monthly": 90, "wkActual": null, "moActual": null, "def": "Konten yang tidak perlu ditulis ulang setelah pemeriksaan.", "src": "Catatan Pemeriksa Fakta"}, "k22": {"div": "konten", "owner": "Penulis Naskah", "name": "Naskah siap dengan sumber tercatat", "type": "proses", "unit": "naskah", "weekly": 28, "monthly": 120, "wkActual": null, "moActual": null, "def": "Naskah yang menyertakan sumber atau label saran umum.", "src": "Naskah video"}, "k23": {"div": "konten", "owner": "Visual Carousel", "name": "Carousel 7 slide dengan foto resmi dan sumber foto", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": null, "moActual": null, "def": "Carousel yang memakai foto resmi merek dan mencatat sumbernya.", "src": "Carousel"}, "k24": {"div": "konten", "owner": "Sutradara Animasi", "name": "Video tanpa wajah dan tanpa rekaman produk", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": null, "moActual": null, "def": "Sesuai aturan Anda: hanya animasi, nama, spesifikasi, atau foto resmi bila perlu.", "src": "Video"}, "k25": {"div": "risk", "owner": "Divisi", "name": "Rekap KPI mingguan terbit", "type": "proses", "unit": "rekap", "weekly": 1, "monthly": 4, "wkActual": null, "moActual": null, "def": "Rekap KPI semua divisi terbit tiap minggu.", "src": "Halaman KPI & Target"}, "k26": {"div": "risk", "owner": "Divisi", "name": "Pengumuman risiko ditindaklanjuti dalam 3 hari", "type": "mutu", "unit": "%", "weekly": 80, "monthly": 80, "wkActual": null, "moActual": null, "def": "Pengumuman tinggi dan sedang yang sudah punya tindakan dalam 3 hari.", "src": "Beranda blok 5"}, "k27": {"div": "risk", "owner": "Kepala Risk", "name": "Risiko tinggi tanpa saran", "type": "hasil", "unit": "risiko", "weekly": 0, "monthly": 0, "wkActual": 0, "moActual": 0, "def": "Jumlah pengumuman tingkat tinggi yang belum punya saran. Makin kecil makin baik.", "src": "Beranda blok 5", "dir": "turun"}, "k28": {"div": "risk", "owner": "Pemeriksa Fakta", "name": "Klaim teknis bersumber atau berlabel saran umum", "type": "mutu", "unit": "%", "weekly": 100, "monthly": 100, "wkActual": 100, "moActual": 100, "def": "Klaim di naskah yang punya sumber atau diberi label saran umum.", "src": "Naskah video"}, "k29": {"div": "risk", "owner": "Pengingat Jadwal", "name": "Pengingat H-1 muncul untuk tiap upload", "type": "proses", "unit": "pengingat", "weekly": 3, "monthly": 15, "wkActual": null, "moActual": null, "def": "Pengingat pilih dan cek produk muncul sehari sebelum upload.", "src": "Beranda blok 2"}}, "settings": {"main": {"startDate": "2026-11-25", "everyDays": 2}}}, P = 'tito:', subs = {};
+  function load(c) { try { return JSON.parse(localStorage.getItem(P + c) || '{}'); } catch (e) { return {}; } }
+  function save(c, o) { try { localStorage.setItem(P + c, JSON.stringify(o)); } catch (e) {} fire(c); }
+  try { if (!localStorage.getItem(P + 'seeded')) { Object.keys(SEED).forEach(function (c) { localStorage.setItem(P + c, JSON.stringify(SEED[c])); }); localStorage.setItem(P + 'seeded', '1'); } } catch (e) {}
+  function snap(c) { var o = load(c); return {docs: Object.keys(o).sort().map(function (k) { return {id: k, data: function () { return o[k]; }}; })}; }
+  function fire(c) { (subs[c] || []).forEach(function (cb) { try { cb(); } catch (e) {} }); }
+  function sub(c, cb) { (subs[c] = subs[c] || []).push(cb); setTimeout(cb, 0); return function () { subs[c] = subs[c].filter(function (x) { return x !== cb; }); }; }
+  function docRef(c, id) { return {
+    onSnapshot: function (cb) { return sub(c, function () { var o = load(c); cb({id: id, exists: !!o[id], data: function () { return o[id]; }}); }); },
+    get: function () { var o = load(c); return Promise.resolve({id: id, exists: !!o[id], data: function () { return o[id]; }}); },
+    set: function (d) { var o = load(c); o[id] = d; save(c, o); return Promise.resolve(); },
+    update: function (d) { var o = load(c); o[id] = Object.assign({}, o[id], d); save(c, o); return Promise.resolve(); },
+    delete: function () { var o = load(c); delete o[id]; save(c, o); return Promise.resolve(); } }; }
+  var db = {
+    collection: function (c) { return {
+      onSnapshot: function (cb) { return sub(c, function () { cb(snap(c)); }); },
+      get: function () { return Promise.resolve(snap(c)); },
+      add: function (d) { var o = load(c), id = 'n' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); o[id] = d; save(c, o); return Promise.resolve(docRef(c, id)); },
+      doc: function (id) { return docRef(c, id); } }; },
+    doc: function (path) { var p = path.split('/'); return docRef(p[0], p[1]); } };
+  var user = {me: function () { return Promise.resolve({name: 'Tito'}); }, isOwner: function () { return Promise.resolve(true); }, canEdit: function () { return Promise.resolve(true); }};
+  window.claude = {use: function (n) { return Promise.resolve(n === 'db' ? db : n === 'user' ? user : null); }};
+  window.addEventListener('storage', function (e) { if (e.key && e.key.indexOf(P) === 0) fire(e.key.slice(P.length)); });
+  window.TITO_EXPORT = function () { var o = {}; ['products', 'videos', 'commissions', 'announcements', 'kpis', 'tasks', 'settings'].forEach(function (c) { o[c] = load(c); }); return JSON.stringify({app: 'tito-affiliator', version: 1, exportedAt: new Date().toISOString(), data: o}, null, 1); };
+  window.TITO_IMPORT = function (txt) { var j = JSON.parse(txt); if (!j || j.app !== 'tito-affiliator' || !j.data) throw new Error('Berkas bukan cadangan Tito Affiliator'); Object.keys(j.data).forEach(function (c) { localStorage.setItem(P + c, JSON.stringify(j.data[c])); }); localStorage.setItem(P + 'seeded', '1'); location.reload(); };
+})();
+</script></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Gaya: gradien pastel biru ke merah muda, kartu sangat bulat, huruf tebal geometris, pil hitam untuk menu aktif dan pil hijau untuk persetujuan. Warna aksen tiap divisi = warna karakternya. */
+:root {
+  --bg: #cfe3f7; --bg-grad: linear-gradient(180deg, #8fc6f1 0%, #cfe2f7 26%, #e6dff3 62%, #f5e0ea 100%);
+  --surface: #ffffff; --surface-2: #f3f1fa; --ink: #14161f; --muted: #5b6074; --line: rgba(20, 22, 40, .09);
+  --accent: #3b6cf6; --accent-ink: #ffffff; --accent-soft: #e3ebff; --go: #a6e05b; --go-ink: #15240a;
+  --ok: #16875a; --ok-soft: #dcf5e8; --warn: #b45c0a; --warn-soft: #ffeccc; --bad: #c93228; --bad-soft: #fde1de;
+  --shadow: 0 10px 30px rgba(60, 80, 140, .13); --floor: #f7f3ee; --wall: #ffffff;
+  --font-display: 'Outfit', 'Figtree', system-ui, sans-serif; --font-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0b0e; --bg-grad: linear-gradient(180deg, #0a0b0e, #0a0b0e); --surface: #16181f; --surface-2: #1f222b; --ink: #f2f3f7; --muted: #9aa0b4; --line: rgba(255, 255, 255, .09);
+    --accent: #7ea2ff; --accent-ink: #0a0b0e; --accent-soft: #1d2a4d; --go: #b7ef6b; --go-ink: #15240a;
+    --ok: #5fe0a0; --ok-soft: #12342a; --warn: #ffb866; --warn-soft: #3a2a12; --bad: #ff8a80; --bad-soft: #3d1b19; --shadow: 0 10px 30px rgba(0, 0, 0, .4); --floor: #23252e; --wall: #2c2f3b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0b0e; --bg-grad: linear-gradient(180deg, #0a0b0e, #0a0b0e); --surface: #16181f; --surface-2: #1f222b; --ink: #f2f3f7; --muted: #9aa0b4; --line: rgba(255, 255, 255, .09);
+  --accent: #7ea2ff; --accent-ink: #0a0b0e; --accent-soft: #1d2a4d; --go: #b7ef6b; --go-ink: #15240a;
+  --ok: #5fe0a0; --ok-soft: #12342a; --warn: #ffb866; --warn-soft: #3a2a12; --bad: #ff8a80; --bad-soft: #3d1b19; --shadow: 0 10px 30px rgba(0, 0, 0, .4); --floor: #23252e; --wall: #2c2f3b; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background-color: var(--bg); background-image: var(--bg-grad); background-attachment: fixed; color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+.app { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 28px; align-items: start; padding-block: 24px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.1; text-wrap: balance; }
+p { margin: 0; } button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+aside { min-width: 0; position: sticky; top: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; padding: 4px 6px 16px; }
+.logo { width: 44px; height: 44px; border-radius: 15px; background: linear-gradient(180deg, #6aa6ff, #3b6cf6); display: grid; place-items: center; color: #fff; font: 800 22px var(--font-display); box-shadow: 0 8px 18px rgba(59, 108, 246, .35); position: relative; }
+.logo i { position: absolute; top: -7px; right: -7px; min-width: 20px; height: 20px; border-radius: 99px; background: #e5483a; border: 2px solid #fff; color: #fff; font: 700 11px var(--font-body); font-style: normal; display: grid; place-items: center; padding: 0 4px; }
+.brand b { font-family: var(--font-display); font-size: 21px; display: block; line-height: 1.05; } .brand span { font-size: 12.5px; color: var(--muted); }
+nav { display: flex; flex-direction: column; gap: 4px; }
+nav .grp { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 14px 12px 4px; }
+nav a { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; padding: 7px 12px 7px 8px; border-radius: 999px; font-weight: 600; font-size: 14.5px; min-height: 46px; }
+nav a:hover { background: color-mix(in srgb, var(--surface) 70%, transparent); } nav a.on { background: var(--ink); color: var(--bg); } nav a.on .ico { color: #15161d; }
+nav a em { font-style: normal; margin-left: auto; font-size: 11.5px; font-weight: 700; background: #e5483a; color: #fff; border-radius: 99px; padding: 1px 8px; }
+nav a .ico { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-size: 15px; flex: none; }
+.av2 { display: inline-block; border-radius: 50%; overflow: hidden; background: color-mix(in srgb, var(--c, #ccc) 30%, var(--surface)); flex: none; }
+.av2 svg { width: 100%; height: 100%; display: block; }
+.themebtn { margin: 14px 8px 0; }
+main { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.hero { border-radius: 32px; padding: 26px; background: linear-gradient(135deg, color-mix(in srgb, var(--hc, #3b6cf6) 30%, var(--surface)) 0%, var(--surface) 70%); box-shadow: var(--shadow); position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 16px; align-items: center; }
+.hero h1 { font-size: clamp(34px, 5.5vw, 60px); font-weight: 800; letter-spacing: -.025em; } .hero p { color: var(--muted); max-width: 52ch; margin-top: 10px; font-size: 16px; }
+.hero .wm { position: absolute; right: -10px; bottom: -34px; font: 800 150px var(--font-display); color: var(--hc, #3b6cf6); opacity: .1; pointer-events: none; line-height: 1; white-space: nowrap; }
+.hero .art { display: flex; justify-content: center; align-items: flex-end; gap: 4px; position: relative; min-height: 190px; }
+.hero .art .chr { flex: 1 1 0; min-width: 0; max-width: 110px; height: auto; } .hero .art.solo .chr { width: 170px; height: 212px; }
+.team { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.tag { display: inline-flex; flex-direction: column; align-items: center; padding: 6px 14px; border-radius: 16px; background: color-mix(in srgb, var(--c) 45%, var(--surface)); color: var(--ink); text-decoration: none; font-weight: 800; font-family: var(--font-display); line-height: 1.1; font-size: 15px; }
+.tag small { font-family: var(--font-body); font-weight: 500; font-size: 11.5px; }
+.pillbar { display: inline-flex; align-items: center; gap: 14px; background: #15161d; color: #fff; border-radius: 999px; padding: 8px 8px 8px 20px; font-weight: 700; margin-top: 18px; }
+.pillbar a { background: #fff; color: #15161d; border-radius: 999px; padding: 7px 16px; text-decoration: none; font-weight: 700; font-size: 14px; }
+.chip3d { position: absolute; background: var(--surface); border-radius: 18px; padding: 8px 14px 8px 8px; font: 700 14px var(--font-display); box-shadow: 0 12px 24px rgba(40, 60, 120, .16); display: flex; align-items: center; gap: 8px; white-space: nowrap; animation: float 4s ease-in-out infinite; }
+.chip3d i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 13px; color: #fff; background: var(--c, #3b6cf6); }
+.chip3d:nth-child(2) { animation-delay: -1.3s; } .chip3d:nth-child(3) { animation-delay: -2.6s; }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(var(--r, -3deg)); } 50% { transform: translateY(-6px) rotate(var(--r, -3deg)); } }
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: end; }
+.head h1 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -.02em; } .head p { color: var(--muted); max-width: 64ch; margin-top: 6px; }
+.sync { font-size: 12.5px; font-weight: 600; color: var(--muted); background: var(--surface); border-radius: 999px; padding: 5px 14px; box-shadow: var(--shadow); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card { background: var(--surface); border-radius: 28px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; box-shadow: var(--shadow); }
+.card.c { background: linear-gradient(180deg, color-mix(in srgb, var(--c) 20%, var(--surface)) 0%, var(--surface) 55%); }
+.card.wide { grid-column: 1 / -1; } .card.alert { outline: 2px solid color-mix(in srgb, var(--warn) 60%, transparent); }
+.card h2 { font-size: 22px; font-weight: 800; flex-wrap: wrap; display: flex; align-items: center; gap: 10px; }
+.card h2 .av2 { width: 42px; height: 42px; } .card h2 .sp { margin-left: auto; }
+.sub { color: var(--muted); font-size: 13.5px; }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 999px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
+.badge.ok { background: var(--ok-soft); color: var(--ok); } .badge.warn { background: var(--warn-soft); color: var(--warn); }
+.badge.bad { background: var(--bad-soft); color: var(--bad); } .badge.acc { background: var(--accent-soft); color: var(--accent); }
+.btn { border: 0; background: var(--surface-2); border-radius: 999px; padding: 9px 18px; cursor: pointer; font-weight: 700; min-height: 42px; }
+.btn:hover { filter: brightness(.96); } .btn.pri { background: var(--go); color: var(--go-ink); } .btn.dark { background: var(--ink); color: var(--bg); }
+.btn.sm { min-height: 34px; padding: 4px 14px; font-size: 13px; }
+.tw { overflow-x: auto; } table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 560px; }
+th, td { text-align: left; padding: 10px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; } td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.prod { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 4px 12px; padding: 14px; border-radius: 20px; background: var(--surface-2); cursor: pointer; }
+.prod.sel { background: var(--accent-soft); outline: 2px solid var(--accent); }
+.rank { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font: 800 16px var(--font-display); background: var(--surface); }
+.prod h3 { font-size: 15.5px; font-family: var(--font-body); font-weight: 700; } .prod .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
+.prod .more { grid-column: 2; display: flex; flex-direction: column; gap: 8px; }
+.checks { display: flex; flex-wrap: wrap; gap: 8px 16px; } .checks label { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; min-height: 32px; cursor: pointer; }
+input[type=checkbox], input[type=radio] { width: 19px; height: 19px; accent-color: var(--accent); }
+.rem { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 18px; background: var(--surface-2); }
+.rem.now { background: var(--warn-soft); } .rem b { font-weight: 700; }
+.empty { border: 2px dashed var(--line); border-radius: 20px; padding: 18px; color: var(--muted); font-size: 14px; display: flex; flex-direction: column; gap: 8px; }
+details.add { background: var(--surface-2); border-radius: 18px; padding: 10px 14px; } details.add summary { cursor: pointer; font-weight: 700; min-height: 34px; display: flex; align-items: center; }
+.form { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px; }
+.form label { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.form input, .form select, textarea { border: 1.5px solid var(--line); background: var(--surface); border-radius: 12px; padding: 8px 11px; min-height: 40px; width: 100%; color: var(--ink); }
+textarea { min-height: 90px; font-family: ui-monospace, monospace; font-size: 12.5px; }
+.ann { border-radius: 20px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; background: var(--surface-2); border-left: 6px solid var(--muted); }
+.ann.tinggi { border-left-color: var(--bad); } .ann.sedang { border-left-color: var(--warn); } .ann.info { border-left-color: var(--accent); } .ann.selesai { opacity: .55; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; } .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.col { background: var(--surface-2); border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 8px; } .col h3 { font-size: 14px; font-family: var(--font-body); font-weight: 700; }
+.task { background: var(--surface); border-radius: 16px; padding: 10px 12px; font-size: 13.5px; display: flex; flex-direction: column; gap: 3px; box-shadow: 0 2px 8px rgba(40, 60, 120, .08); }
+.kin { width: 84px; border: 1.5px solid var(--line); background: var(--surface); border-radius: 10px; padding: 5px 8px; text-align: right; }
+.toast { position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; z-index: 30; }
+.slot { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 12px; padding: 12px 0; border-bottom: 1px solid var(--line); } .slot b { font-family: var(--font-display); font-size: 20px; } .slot:last-child { border-bottom: 0; }
+.stat b { font-family: var(--font-display); font-size: 28px; font-weight: 800; display: block; line-height: 1.1; } .stat span { font-size: 12.5px; color: var(--muted); } .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.bar { height: 10px; background: var(--surface-2); border-radius: 99px; overflow: hidden; min-width: 60px; } .bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; } .bar.ok i { background: var(--go); } .bar.warn i { background: #ffb347; }
+main a { color: var(--accent); font-weight: 600; }
+/* kantor */
+.officewrap { background: var(--surface); border-radius: 32px; padding: 14px; box-shadow: var(--shadow); } .office { width: 100%; height: auto; display: block; }
+.otx { font: 700 12px var(--font-body); } .otx2 { font: 700 11px var(--font-body); fill: #15161d; } .otx3 { font: 700 8.5px var(--font-body); fill: #15161d; }
+.person { cursor: pointer; } .person:focus-visible { outline: none; } .person:hover .chr { filter: brightness(1.06); }
+.live { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 12.5px; background: #15161d; color: #fff; border-radius: 99px; padding: 5px 14px 5px 11px; } .live i { width: 9px; height: 9px; border-radius: 50%; background: #ff4d4d; animation: pulse 1.4s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.7); } }
+/* karakter */
+.chr { overflow: visible; } .chr .eyes { animation: blink 5.5s infinite; transform-box: fill-box; transform-origin: center; } .chr .pup { animation: look 7s ease-in-out infinite; }
+.chr.idle, .chr.wave { animation: bob 3.2s ease-in-out infinite; } .chr .arm { transform-box: view-box; }
+.chr.work .arm.L { animation: typeL .45s ease-in-out infinite alternate; } .chr.work .arm.R { animation: typeR .45s ease-in-out .2s infinite alternate; }
+.chr.wave .arm.R { animation: wave .7s ease-in-out infinite alternate; }
+.chr.face { animation: none; }
+@keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.08); } } @keyframes look { 0%, 100% { transform: translateX(0); } 35% { transform: translateX(-2px); } 70% { transform: translateX(2px); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } } @keyframes typeL { to { transform: rotate(-9deg); } } @keyframes typeR { to { transform: rotate(9deg); } } @keyframes wave { to { transform: rotate(-34deg); } }
+.walker { animation: trip 11s ease-in-out infinite; } @keyframes trip { 0%, 12% { transform: translate(0, 0); } 32%, 62% { transform: translate(var(--dx), var(--dy)); } 82%, 100% { transform: translate(0, 0); } }
+.bang { animation: hop .8s ease-in-out infinite alternate; } @keyframes hop { to { transform: translate(var(--bx, 0), -5px); } }
+.scr.on { animation: glow 1.6s ease-in-out infinite alternate; } @keyframes glow { to { opacity: .6; } }
+@media (prefers-reduced-motion: reduce) { .chr, .chr *, .walker, .bang, .scr, .chip3d, .live i { animation: none !important; } }
+@media (max-width: 900px) {
+  .app { grid-template-columns: minmax(0, 1fr); gap: 14px; padding-bottom: 110px; } aside { position: static; } .brand { padding-bottom: 4px; } .themebtn { margin: 4px 6px 0; }
+  nav { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); flex-direction: row; gap: 2px; overflow-x: auto; background: var(--surface); border-radius: 28px; padding: 8px; box-shadow: 0 10px 40px rgba(20, 30, 70, .28); }
+  nav .grp { display: none; } nav a { flex-direction: column; gap: 2px; font-size: 11px; min-height: 0; padding: 6px 10px; border-radius: 18px; flex: 0 0 76px; width: 76px; text-align: center; justify-content: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; } nav a em { position: absolute; margin: -4px 0 0 22px; }
+  nav a { position: relative; }
+  .grid { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; padding: 20px; } .hero .wm { font-size: 90px; } .hero .art { min-height: 150px; } .hero .art .chr { width: 72px; height: 90px; } .hero .art.solo .chr { width: 130px; height: 162px; }
+  .chip3d { font-size: 12px; padding: 6px 10px 6px 6px; } .hero .art { padding-top: 34px; }
+  .officewrap { overflow-x: auto; } .office { min-width: 700px; }
+  .card { padding: 18px; border-radius: 24px; }
+}
+</style>
+<div id="defs"></div>
+<div class="app">
+  <aside>
+    <div class="brand"><div class="logo">T<i id="lb">0</i></div><div><b>Tito Affiliator</b><span>Ruang kerja tim agent · WIB</span></div></div>
+    <nav id="nav" aria-label="Menu"></nav>
+    <button class="btn sm themebtn" id="themebtn" type="button">Tema: otomatis</button>
+  </aside>
+  <main id="main"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+var CH = {
+  nara: {name: 'Nara', top: '#7ee8d4', bot: '#5aa8ff', acc: '#ff7a59', eyeY: 52, nose: '<rect x="53" y="62" width="14" height="9" rx="4.5" fill="#ff9d5c"/>',
+    body: '<rect x="32" y="16" width="56" height="106" rx="28"/>', prop: '<g transform="translate(78 78) rotate(8)"><rect width="28" height="34" rx="5" fill="#fff"/><rect x="5" y="22" width="4" height="8" rx="1" fill="#5aa8ff"/><rect x="12" y="15" width="4" height="15" rx="1" fill="#7ee8d4"/><rect x="19" y="8" width="4" height="22" rx="1" fill="#ff7a59"/></g>'},
+  tumi: {name: 'Tumi', top: '#d6f56a', bot: '#56d39b', acc: '#7a5cff', eyeY: 66, nose: '<rect x="53" y="76" width="14" height="9" rx="4.5" fill="#ff8fb5"/>',
+    body: '<path d="M12 112C12 50 34 24 60 24s48 26 48 88q0 14-14 14H26q-14 0-14-14z"/>', prop: '<g transform="translate(34 94)"><rect x="8" y="6" width="36" height="6" rx="3" fill="#2a2f45"/><circle cx="10" cy="14" r="11" fill="#2a2f45"/><circle cx="42" cy="14" r="11" fill="#2a2f45"/><circle cx="10" cy="14" r="6.5" fill="#9ed8ff"/><circle cx="42" cy="14" r="6.5" fill="#9ed8ff"/></g>'},
+  mika: {name: 'Mika', top: '#ff9a6b', bot: '#ff5fa2', acc: '#2d6bff', eyeY: 56, nose: '<path d="M60 64l7 11H53z" fill="#7a5cff"/>',
+    body: '<path d="M60 16L98 36V94L60 120 22 94V36z" stroke-width="14" stroke-linejoin="round"/>', prop: '<g transform="translate(80 66) rotate(-14)"><path d="M0 8h12l22-14v40L12 20H0z" fill="#ffd23f"/><rect x="-4" y="6" width="8" height="16" rx="3" fill="#2a2f45"/></g>'},
+  koko: {name: 'Koko', top: '#c5a8ff', bot: '#7ec8ff', acc: '#ffb300', eyeY: 62, nose: '<rect x="53" y="73" width="14" height="9" rx="4.5" fill="#37d39a"/>',
+    body: '<rect x="24" y="30" width="72" height="92" rx="28"/><circle cx="40" cy="30" r="13"/><circle cx="80" cy="30" r="13"/>', prop: '<g transform="translate(70 88)"><rect width="38" height="26" rx="6" fill="#2a2f45"/><rect x="6" y="-4" width="12" height="6" rx="2" fill="#2a2f45"/><circle cx="19" cy="14" r="9" fill="#fff"/><circle cx="19" cy="14" r="5.5" fill="#5aa8ff"/></g>'},
+  sigi: {name: 'Sigi', top: '#ffd35a', bot: '#ff9a5a', acc: '#19b394', eyeY: 50, nose: '<rect x="53" y="60" width="14" height="9" rx="4.5" fill="#19b394"/>',
+    body: '<path d="M60 14L102 30V78Q102 110 60 126 18 110 18 78V30z" stroke-width="10" stroke-linejoin="round"/>', prop: '<g transform="translate(-2 78) rotate(-8)"><rect width="30" height="38" rx="5" fill="#fff"/><path d="M7 14l5 5 10-11" fill="none" stroke="#19b394" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="25" width="16" height="3.5" rx="1.7" fill="#ffd35a"/></g>'}
+};
+function charDefs() {
+  var g = '';
+  Object.keys(CH).forEach(function (k) { var c = CH[k]; g += '<linearGradient id="g-' + k + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + c.top + '"/><stop offset="1" stop-color="' + c.bot + '"/></linearGradient>'; });
+  return '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' + g +
+   '<radialGradient id="g-shade" cx=".35" cy=".25" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></radialGradient>' +
+   '<filter id="fur" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" result="d"/><feTurbulence type="fractalNoise" baseFrequency="1.7" numOctaves="1" seed="9" result="n2"/><feColorMatrix in="n2" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 -.35" result="hl"/><feComposite in="hl" in2="d" operator="in" result="h2"/><feMerge><feMergeNode in="d"/><feMergeNode in="h2"/></feMerge></filter>' +
+   '</defs></svg>';
+}
+function charSvg(kind, pose, cls) {
+  var c = CH[kind]; if (!c) return '';
+  var ey = c.eyeY, arm = function (side, x) { return '<g class="arm ' + side + '" style="transform-origin:' + x + 'px 90px"><rect x="' + (x - 6) + '" y="86" width="12" height="30" rx="6" fill="' + c.acc + '"/><circle cx="' + x + '" cy="116" r="8" fill="' + c.acc + '"/></g>'; };
+  var shape = c.body.replace(/^<(\w+)/, '<$1 fill="url(#g-' + kind + ')" stroke="url(#g-' + kind + ')"').replace(/<(circle|rect)(?![^>]*fill=)/g, '<$1 fill="url(#g-' + kind + ')"');
+  var shade = c.body.replace(/<(\w+)/g, '<$1 fill="url(#g-shade)" stroke="url(#g-shade)"');
+  var boots = '<rect x="38" y="118" width="17" height="24" rx="8" fill="' + c.acc + '"/><rect x="65" y="118" width="17" height="24" rx="8" fill="' + c.acc + '"/><rect x="41" y="122" width="5" height="12" rx="2.5" fill="#fff" opacity=".35"/><rect x="68" y="122" width="5" height="12" rx="2.5" fill="#fff" opacity=".35"/>';
+  return '<svg class="chr ' + (pose || 'idle') + ' ' + (cls || '') + '" viewBox="0 0 120 150" role="img" aria-label="' + c.name + '">' +
+    '<ellipse cx="60" cy="144" rx="30" ry="4" fill="#000" opacity=".12"/>' + boots +
+    arm('L', 24) + '<g filter="url(#fur)">' + shape + shade + '</g>' + arm('R', 96) + c.nose +
+    '<g class="eyes"><circle cx="47" cy="' + ey + '" r="10" fill="#fff"/><circle cx="73" cy="' + ey + '" r="10" fill="#fff"/><circle class="pup" cx="49" cy="' + (ey + 1) + '" r="5" fill="#15151c"/><circle class="pup" cx="75" cy="' + (ey + 1) + '" r="5" fill="#15151c"/></g>' + c.prop + '</svg>';
+}
+
+var KIND = {analytics: 'nara', riset: 'tumi', marketing: 'mika', konten: 'koko', risk: 'sigi'};
+var DCOL = {analytics: '#5fd8c8', riset: '#9be05a', marketing: '#ff7fa0', konten: '#a98bff', risk: '#ffb347'};
+var VERB = {analytics: 'membaca data', riset: 'meriset produk', marketing: 'menyusun jadwal', konten: 'memproduksi', risk: 'memeriksa'};
+var officeSel = null;
+function av(div, px) { var k = KIND[div]; return '<span class="av2" style="width:' + (px || 40) + 'px;height:' + (px || 40) + 'px;--c:' + DCOL[div] + '">' + charSvg(k, 'idle', 'face').replace('viewBox="0 0 120 150"', 'viewBox="16 8 88 96"') + '</span>'; }
+var RM = {analytics: [0, 0], riset: [340, 0], marketing: [680, 0], konten: [0, 300], risk: [340, 300], tito: [680, 300]};
+var SEATS = [[58, 138], [150, 138], [242, 138], [104, 214], [196, 214]];
+function stat(id) {
+  var ts = S.tasks.filter(function (t) { return t.div === id; });
+  return {doing: ts.filter(function (t) { return t.status === 'doing'; }), wait: ts.filter(function (t) { return t.status === 'tunggu'; })};
+}
+function decor(id, x, y) {
+  var c = DCOL[id];
+  if (id === 'analytics') return '<rect x="' + (x + 200) + '" y="' + (y + 34) + '" width="90" height="52" rx="6" fill="#fff"/><rect x="' + (x + 212) + '" y="' + (y + 62) + '" width="10" height="16" fill="' + c + '"/><rect x="' + (x + 230) + '" y="' + (y + 52) + '" width="10" height="26" fill="#5aa8ff"/><rect x="' + (x + 248) + '" y="' + (y + 44) + '" width="10" height="34" fill="#ff7a59"/><rect x="' + (x + 266) + '" y="' + (y + 58) + '" width="10" height="20" fill="#ffd35a"/>';
+  if (id === 'riset') return '<rect x="' + (x + 214) + '" y="' + (y + 30) + '" width="80" height="62" rx="4" fill="#b98a5a"/><rect x="' + (x + 220) + '" y="' + (y + 36) + '" width="68" height="22" fill="#e9d2b0"/><rect x="' + (x + 220) + '" y="' + (y + 62) + '" width="68" height="24" fill="#e9d2b0"/>' + [0, 1, 2, 3, 4].map(function (i) { return '<rect x="' + (x + 224 + i * 12) + '" y="' + (y + 40) + '" width="8" height="16" fill="' + ['#7a5cff', '#ff7fa0', '#5fd8c8', '#ffb347', '#5aa8ff'][i] + '"/>'; }).join('');
+  if (id === 'marketing') return '<rect x="' + (x + 208) + '" y="' + (y + 28) + '" width="76" height="60" rx="6" fill="#fff"/><path d="M' + (x + 222) + ' ' + (y + 60) + 'h14l26-16v36l-26-14h-14z" fill="#ffd23f"/><circle cx="' + (x + 268) + '" cy="' + (y + 44) + '" r="3" fill="' + c + '"/>';
+  if (id === 'konten') return '<rect x="' + (x + 222) + '" y="' + (y + 34) + '" width="8" height="58" fill="#2a2f45"/><circle cx="' + (x + 226) + '" cy="' + (y + 40) + '" r="16" fill="#fff6c8"/><rect x="' + (x + 250) + '" y="' + (y + 30) + '" width="44" height="34" rx="5" fill="#fff"/><circle cx="' + (x + 272) + '" cy="' + (y + 47) + '" r="9" fill="#a98bff"/>';
+  if (id === 'risk') return '<rect x="' + (x + 206) + '" y="' + (y + 28) + '" width="86" height="62" rx="6" fill="#fff"/>' + [0, 1, 2].map(function (i) { return '<path d="M' + (x + 216) + ' ' + (y + 44 + i * 16) + 'l5 5 9-10" stroke="#19b394" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="' + (x + 240) + '" y="' + (y + 43 + i * 16) + '" width="40" height="5" rx="2.5" fill="#d8dce8"/>'; }).join('');
+  return '';
+}
+function officeSvg() {
+  var o = '<svg class="office" viewBox="0 0 1000 590" role="img" aria-label="Kantor Tito Affiliator">';
+  var walkers = '', titoWait = 0;
+  DIVS.forEach(function (d) {
+    var p = RM[d.id], x = p[0], y = p[1], st = stat(d.id), mode = st.wait.length && st.doing.length ? 'both' : st.wait.length ? 'wait' : st.doing.length ? 'work' : 'idle';
+    var c = DCOL[d.id];
+    o += '<g class="room"><rect x="' + x + '" y="' + y + '" width="320" height="280" rx="22" fill="var(--floor)"/><path d="M' + x + ' ' + (y + 22) + 'a22 22 0 0 1 22-22h276a22 22 0 0 1 22 22v78H' + x + 'z" fill="color-mix(in srgb,' + c + ' 38%,var(--wall))"/><rect x="' + x + '" y="' + (y + 96) + '" width="320" height="6" fill="color-mix(in srgb,' + c + ' 55%,#fff)"/>';
+    o += decor(d.id, x, y);
+    o += '<rect x="' + (x + 14) + '" y="' + (y + 14) + '" width="' + (d.nav.length * 8 + 40) + '" height="26" rx="13" fill="#15161d"/><circle cx="' + (x + 28) + '" cy="' + (y + 27) + '" r="5" fill="' + (mode === 'idle' ? '#9aa0b4' : mode === 'work' ? '#a6e05b' : '#ffb347') + '"/><text x="' + (x + 40) + '" y="' + (y + 31) + '" class="otx" fill="#fff">' + h(d.nav) + '</text>';
+    var tk = (st.wait[0] || st.doing[0]), label = tk ? tk.title : 'Belum ada pekerjaan aktif';
+    o += '<g transform="rotate(-2 ' + (x + 100) + ' ' + (y + 70) + ')"><rect x="' + (x + 14) + '" y="' + (y + 50) + '" width="176" height="30" rx="15" fill="#fff"/><circle cx="' + (x + 31) + '" cy="' + (y + 65) + '" r="9" fill="' + (st.wait.length ? '#ffb347' : c) + '"/><text x="' + (x + 46) + '" y="' + (y + 69) + '" class="otx2">' + h(label.length > 27 ? label.slice(0, 26) + '…' : label) + '</text></g>';
+    d.staff.forEach(function (s, i) {
+      var sp = SEATS[i], sx = x + sp[0], sy = y + sp[1], walk = (i === 0 && st.wait.length), pose = mode === 'idle' ? 'idle' : (walk ? 'wave' : 'work');
+      var seat = '<g class="seat"><rect x="' + (sx - 40) + '" y="' + (sy + 16) + '" width="80" height="16" rx="5" fill="#caa57a"/><rect x="' + (sx - 40) + '" y="' + (sy + 16) + '" width="80" height="5" rx="2.5" fill="#e3c39b"/><rect x="' + (sx - 16) + '" y="' + (sy - 3) + '" width="32" height="21" rx="4" fill="#2a2f45"/><rect class="scr ' + (mode === 'idle' ? '' : 'on') + '" x="' + (sx - 13) + '" y="' + (sy) + '" width="26" height="15" rx="2" fill="' + (mode === 'idle' ? '#56607a' : '#9ed8ff') + '"/></g>';
+      var ch = '<g class="person' + (walk ? ' walker' : '') + '" data-act="who" data-div="' + d.id + '" data-i="' + i + '" tabindex="0" style="' + (walk ? '--dx:' + (RM.tito[0] + 120 - sx) + 'px;--dy:' + (RM.tito[1] + 168 - sy) + 'px;' : '') + '"><g transform="translate(' + (sx - 30) + ' ' + (sy - 42) + ') scale(.5)">' + '<g class="chr ' + pose + '">' + charSvg(KIND[d.id], pose).replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '') + '</g>' + '</g>' + (walk ? '<g transform="translate(' + (sx + 14) + ' ' + (sy - 52) + ')"><g class="bang"><circle r="10" fill="#ff7a3d"/><text y="5" text-anchor="middle" class="otx" fill="#fff" style="font-size:14px">!</text></g></g>' : '') + '</g>';
+      if (walk) { o += seat; walkers += ch; titoWait++; } else o += ch.replace('class="person"', 'class="person"') + seat;
+      o += '<g><rect x="' + (sx - 31) + '" y="' + (sy + 38) + '" width="62" height="14" rx="7" fill="#fff" opacity=".92"/><text x="' + sx + '" y="' + (sy + 48) + '" text-anchor="middle" class="otx3">' + h(s[0].length > 14 ? s[0].slice(0, 13) + '…' : s[0]) + '</text></g>';
+    });
+    o += '<ellipse cx="' + (x + 24) + '" cy="' + (y + 262) + '" rx="12" ry="5" fill="#000" opacity=".08"/><rect x="' + (x + 16) + '" y="' + (y + 236) + '" width="16" height="24" rx="4" fill="#d9825b"/><circle cx="' + (x + 24) + '" cy="' + (y + 228) + '" r="14" fill="#5fcf7a"/><circle cx="' + (x + 17) + '" cy="' + (y + 222) + '" r="9" fill="#7be08f"/></g>';
+  });
+  var tx = RM.tito[0], ty = RM.tito[1];
+  o += '<g class="room"><rect x="' + tx + '" y="' + ty + '" width="320" height="280" rx="22" fill="var(--floor)"/><path d="M' + tx + ' ' + (ty + 22) + 'a22 22 0 0 1 22-22h276a22 22 0 0 1 22 22v78H' + tx + 'z" fill="#2a2f45"/><rect x="' + tx + '" y="' + (ty + 96) + '" width="320" height="6" fill="#ffd35a"/>' +
+   '<rect x="' + (tx + 14) + '" y="' + (ty + 14) + '" width="150" height="26" rx="13" fill="#ffd35a"/><text x="' + (tx + 28) + '" y="' + (ty + 31) + '" class="otx" fill="#15161d">Ruang Tito (Owner)</text>' +
+   '<rect x="' + (tx + 196) + '" y="' + (ty + 30) + '" width="108" height="56" rx="10" fill="#fff"/><text x="' + (tx + 250) + '" y="' + (ty + 52) + '" text-anchor="middle" class="otx2">ACC hari ini</text><text x="' + (tx + 250) + '" y="' + (ty + 74) + '" text-anchor="middle" style="font:800 16px var(--font-display)" fill="#15161d">' + S.tasks.filter(function (t) { return t.status === 'tunggu'; }).length + ' menunggu</text>' +
+   '<rect x="' + (tx + 60) + '" y="' + (ty + 130) + '" width="200" height="30" rx="8" fill="#8c6a47"/><rect x="' + (tx + 60) + '" y="' + (ty + 130) + '" width="200" height="8" rx="4" fill="#b08a62"/><rect x="' + (tx + 112) + '" y="' + (ty + 104) + '" width="44" height="30" rx="5" fill="#2a2f45"/><rect x="' + (tx + 116) + '" y="' + (ty + 108) + '" width="36" height="22" rx="3" fill="#9ed8ff"/>' +
+   '<circle cx="' + (tx + 200) + '" cy="' + (ty + 112) + '" r="22" fill="#15161d"/><text x="' + (tx + 200) + '" y="' + (ty + 121) + '" text-anchor="middle" style="font:800 24px var(--font-display)" fill="#fff">T</text>' +
+   '<rect x="' + (tx + 24) + '" y="' + (ty + 196) + '" width="140" height="56" rx="20" fill="#e5534b"/><rect x="' + (tx + 34) + '" y="' + (ty + 186) + '" width="120" height="26" rx="13" fill="#f0716a"/>' +
+   '<rect x="' + (tx + 190) + '" y="' + (ty + 210) + '" width="100" height="34" rx="17" fill="#fff"/><text x="' + (tx + 240) + '" y="' + (ty + 232) + '" text-anchor="middle" class="otx2">Pemilik: ACC</text></g>';
+  return o + walkers + '</svg>';
+}
+
+document.getElementById("defs").innerHTML = charDefs();
+var DIVS = [
+ {id:'analytics', nav:'Analytics', name:'Analytics & Opportunities', blurb:'Membaca data akun dan pasar, lalu menemukan peluang dan kendala.',
+  staff:[['Kepala Analytics','Memimpin analisis dan rekomendasi mingguan'],['Pemantau Kendala','Mendeteksi hambatan kerja dan meneruskannya ke Risk & Solution']],
+  later:['Analis Tren Pencarian','Penilai Peluang','Analis Performa Konten']},
+ {id:'riset', nav:'Riset Produk & Merek', name:'Riset Products & Brands', blurb:'Mencari produk fotografi yang laku di Indonesia dan menyusun 5 referensi berperingkat.',
+  staff:[['Kepala Riset','Memimpin laporan referensi produk'],['Pencari Produk Laris','Mencari produk dan angka terjual'],['Klasifikasi Harga','Mengelompokkan produk ke kelas harga'],['Analis Spesifikasi','Mencocokkan spesifikasi ke halaman resmi'],['Cek Harga & Stok','Memeriksa harga dan stok terkini']],
+  later:['Peneliti Merek']},
+ {id:'marketing', nav:'Marketing', name:'Marketing', blurb:'Menentukan jadwal posting, hook, dan arah promosi supaya tayangan berujung pembelian.',
+  staff:[['Kepala Marketing','Menyusun kalender upload dan jadwal tetap'],['Ahli Hook','Menulis hook video dan carousel']],
+  later:['Ahli Strategi Audiens','Perencana Tren dan Wave','Perencana Promosi Affiliate','Pemimpin Eksperimen Pertumbuhan']},
+ {id:'konten', nav:'Content Creator', name:'Content Creator', blurb:'Memproduksi video animasi edukasi dan carousel produk dengan foto resmi.',
+  staff:[['Kepala Produksi','Memimpin antrean produksi'],['Penulis Naskah','Menulis naskah video edukasi'],['Visual Carousel','Menyusun 7 slide carousel dari foto resmi'],['Sutradara Animasi','Mengarahkan alur animasi video']],
+  later:['Penulis Carousel','Spesialis Suara','Pengelola Aset']},
+ {id:'risk', nav:'Risk & Solution', name:'Risk & Solution', blurb:'Memeriksa fakta, mencatat risiko, dan mengumpulkan KPI semua divisi menjadi target.',
+  staff:[['Kepala Risk','Memimpin pengumuman risiko dan rekap KPI'],['Pemeriksa Fakta','Memeriksa klaim teknis di naskah'],['Pengingat Jadwal','Memunculkan pengingat pemilihan produk dan upload']],
+  later:['Penilai Kinerja','Analis Perkembangan','Pengamat Kompetitor','Perencana Organisasi']}
+];
+var ROUTES = ['beranda','analytics','riset','marketing','konten','risk','kpi','kantor','akses'];
+var KANTOR_URL = 'https://claude.ai/artifact/SD1wVZpnWxXeoVqyxxnu1C', who = {name: '', role: ''};
+var SLOTS = [
+ {t:'07:00', k:'Video edukasi 1', why:'Orang membuka TikTok sebelum berangkat. Cocok untuk tips cepat yang menjawab satu masalah.'},
+ {t:'12:00', k:'Video edukasi 2', why:'Jam istirahat siang. Topik ringan tentang cara memotret atau memilih alat.'},
+ {t:'17:30', k:'Video edukasi 3', why:'Jam pulang kerja dan sekolah. Topik yang bisa langsung dicoba di rumah.'},
+ {t:'19:30', k:'Carousel affiliate (tiap 2 hari)', why:'Malam hari orang punya waktu membandingkan harga dan membuka keranjang. Slot ini untuk niat beli tertinggi.'},
+ {t:'21:00', k:'Video edukasi 4', why:'Penonton malam yang masih aktif. Cocok untuk topik yang lebih panjang dan bisa disimpan.'}
+];
+var PLATFORMS = ['Shopee Affiliate','TikTok Shop','Tokopedia','Lainnya'];
+var S = {products:[], videos:[], commissions:[], announcements:[], kpis:[], tasks:[], settings:null};
+var db = null, noDb = false, slow = false, ready = false, got = {}, dirty = false, openForms = {}, expanded = {};
+var $ = function (id) { return document.getElementById(id); };
+function h(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function rp(n) { return n == null || n === '' || isNaN(n) ? '–' : 'Rp' + Math.round(n).toLocaleString('id-ID'); }
+function num(n) { return n == null || isNaN(n) ? '–' : Number(n).toLocaleString('id-ID'); }
+function toast(m) { var t = $('toast'); t.textContent = m; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(function () { t.hidden = true; }, 2600); }
+function iso(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function fdate(s, long) { if (!s) return '–'; var p = String(s).split('-'); var d = new Date(+p[0], +p[1] - 1, +p[2]); return d.toLocaleDateString('id-ID', long ? {weekday:'long', day:'numeric', month:'long'} : {day:'numeric', month:'short'}); }
+function addDays(s, n) { var p = s.split('-'); var d = new Date(+p[0], +p[1] - 1, +p[2] + n); return iso(d); }
+function cfg() { var s = S.settings || {}; return {start: s.startDate || '2026-11-25', every: s.everyDays || 2}; }
+function uploadDates() { var c = cfg(), a = []; for (var i = 0; i < 8; i++) a.push(addDays(c.start, i * c.every)); return a; }
+function nextUpload() { var t = iso(new Date()), u = uploadDates(); for (var i = 0; i < u.length; i++) if (u[i] >= t) return u[i]; return u[u.length - 1]; }
+function dayDiff(a, b) { var x = a.split('-'), y = b.split('-'); return Math.round((new Date(+y[0], +y[1] - 1, +y[2]) - new Date(+x[0], +x[1] - 1, +x[2])) / 864e5); }
+function byId(arr, id) { for (var i = 0; i < arr.length; i++) if (arr[i].id === id) return arr[i]; return null; }
+function route() { var r = (location.hash || '').replace('#', ''); return ROUTES.indexOf(r) >= 0 ? r : 'beranda'; }
+function write(p) { if (!db) { toast('Penyimpanan belum tersedia, perubahan tidak tersimpan'); return Promise.resolve(); }
+  return p.catch(function (e) { toast('Gagal menyimpan: ' + ((e && e.message) || 'coba lagi')); }); }
+function col(n) { return db.collection(n); }
+</script>
+<script>
+function init() {
+  render();
+  (async function () {
+    try { var us = await claude.use('user'); if (us) { var mm = await us.me(); who.name = (mm && mm.name) || ''; who.role = (await us.isOwner()) ? 'Pemilik' : (await us.canEdit()) ? 'Editor' : 'Anggota'; render(); } } catch (e) {}
+    try { db = await claude.use('db'); } catch (e) { db = null; }
+    if (!db) { noDb = true; ready = true; render(); return; }
+    var timer = setTimeout(function () { if (!ready) { slow = true; ready = true; render(); } }, 10000);
+    var map = {products:'products', videos:'videos', commissions:'commissions', announcements:'announcements', kpis:'kpis', tasks:'tasks'};
+    Object.keys(map).forEach(function (k) {
+      col(map[k]).onSnapshot(function (snap) {
+        S[k] = snap.docs.map(function (d) { var o = Object.assign({}, d.data()); o.id = d.id; return o; });
+        got[k] = true; check(timer);
+      }, function () { got[k] = true; check(timer); });
+    });
+    db.doc('settings/main').onSnapshot(function (d) { S.settings = d.exists ? d.data() : null; got.settings = true; check(timer); }, function () { got.settings = true; check(timer); });
+  })();
+}
+function check(timer) { if (Object.keys(got).length >= 7 && !ready) { ready = true; clearTimeout(timer); } render(); }
+function typing() { var a = document.activeElement; return a && a.closest && a.closest('main') && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && a.type !== 'checkbox' && a.type !== 'radio'; }
+function render() {
+  if (typing()) { dirty = true; return; }
+  dirty = false;
+  var r = route();
+  $('nav').innerHTML = navHtml(r);
+  var m = $('main'), y = window.scrollY;
+  var body = r === 'beranda' ? pageHome() : r === 'kpi' ? pageKpi() : r === 'kantor' ? pageKantor() : r === 'akses' ? pageAkses() : pageDiv(r);
+  m.innerHTML = banner() + body;
+  m.querySelectorAll('details.add').forEach(function (d) { if (openForms[d.dataset.k]) d.open = true; });
+  window.scrollTo(0, y);
+}
+function banner() {
+  if (noDb) return '<div class="card alert"><b>Penyimpanan tidak tersedia di tampilan ini.</b><p class="sub">Halaman tampil tanpa data tersimpan. Buka lewat tautan artifact yang masuk akun Anda agar data terbaca dan tersimpan.</p></div>';
+  if (slow) return '<div class="card alert"><b>Data lambat dimuat.</b><p class="sub">Muat ulang halaman sekali jika blok di bawah tetap kosong.</p></div>';
+  return '';
+}
+var IC = {home: '<path d="M3 11l9-8 9 8v10H3z"/>', kpi: '<path d="M5 20V10M12 20V4M19 20v-7"/>', kantor: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h6"/>', akses: '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v4"/>'};
+function ico(k) { return '<span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + IC[k] + '</svg></span>'; }
+function navHtml(r) {
+  var openA = S.announcements.filter(function (a) { return a.status !== 'selesai'; }).length;
+  var lb = $('lb'); if (lb) lb.textContent = openA + S.tasks.filter(function (t) { return t.status === 'tunggu'; }).length;
+  var out = '<a href="#beranda" class="' + (r === 'beranda' ? 'on' : '') + '">' + ico('home') + 'Beranda</a><div class="grp">Divisi</div>';
+  DIVS.forEach(function (d) { out += '<a href="#' + d.id + '" class="' + (r === d.id ? 'on' : '') + '">' + av(d.id, 32) + h(d.nav) + (d.id === 'risk' && openA ? '<em>' + openA + '</em>' : '') + '</a>'; });
+  return out + '<div class="grp">Target</div><a href="#kpi" class="' + (r === 'kpi' ? 'on' : '') + '">' + ico('kpi') + 'KPI & Target</a><div class="grp">Perusahaan</div><a href="#kantor" class="' + (r === 'kantor' ? 'on' : '') + '">' + ico('kantor') + 'Kantor live</a><a href="#akses" class="' + (r === 'akses' ? 'on' : '') + '">' + ico('akses') + 'Akses</a>' + (who.role ? '<div class="sub" style="padding:10px 12px">Masuk sebagai ' + h(who.name || 'pengguna') + ' · ' + h(who.role) + '</div>' : '');
+}
+function head(title, sub, right) { return '<div class="head"><div><h1>' + h(title) + '</h1><p>' + h(sub) + '</p></div>' + (right ? '<span class="sync">' + h(right) + '</span>' : '') + '</div>'; }
+function emptyBox(msg) { return '<div class="empty">' + msg + '</div>'; }
+
+/* ---------- Beranda ---------- */
+function homeHero(t) {
+  var working = 0, wait = S.tasks.filter(function (x) { return x.status === 'tunggu'; }).length, doing = S.tasks.filter(function (x) { return x.status === 'doing'; }).length, openA = S.announcements.filter(function (a) { return a.status !== 'selesai'; }).length;
+  DIVS.forEach(function (d) { if (stat(d.id).doing.length) working += d.staff.length; });
+  var art = DIVS.map(function (d) { return charSvg(KIND[d.id], stat(d.id).doing.length ? 'work' : 'idle'); }).join('');
+  var tags = DIVS.map(function (d) { return '<a class="tag" href="#' + d.id + '" style="--c:' + DCOL[d.id] + '">' + CH[KIND[d.id]].name + '<small>' + VERB[d.id] + '</small></a>'; }).join('');
+  return '<section class="hero" style="--hc:#3b6cf6"><div><span class="sync">' + h(t) + '</span><h1 style="margin-top:14px">Tim Anda sedang bekerja.</h1><p>Lima divisi, satu pemilik. Keputusan yang menunggu Anda ada di blok 2 dan 5.</p><div class="team">' + tags + '</div><div class="pillbar">' + working + ' agen bekerja<a href="#kantor">Lihat langsung</a></div></div>' +
+    '<div class="art">' + art + '<span class="chip3d" style="--r:-4deg;left:2%;top:0;--c:#ffb347"><i>!</i>' + wait + ' menunggu ACC</span><span class="chip3d" style="--r:3deg;right:0;top:34px;--c:#e5483a"><i>' + openA + '</i>pengumuman terbuka</span><span class="chip3d" style="--r:-2deg;left:20%;bottom:-6px;--c:#3b6cf6"><i>' + doing + '</i>pekerjaan jalan</span></div></section>';
+}
+function divHero(d) {
+  var st = stat(d.id), k = kpisOf(d.id).length;
+  return '<section class="hero" style="--hc:' + DCOL[d.id] + '"><div><h1>' + h(d.name) + '</h1><p>' + h(d.blurb) + '</p><div class="pillbar">' + CH[KIND[d.id]].name + ' memimpin · ' + d.staff.length + ' staf<a href="#kantor">Lihat di kantor</a></div></div>' +
+    '<div class="art solo">' + charSvg(KIND[d.id], st.doing.length ? 'work' : 'wave') + '<span class="chip3d" style="--r:-3deg;left:4%;top:6px;--c:' + DCOL[d.id] + '"><i>' + st.doing.length + '</i>dikerjakan</span><span class="chip3d" style="--r:3deg;right:2%;top:60px;--c:#ffb347"><i>' + st.wait.length + '</i>menunggu Tito</span><span class="chip3d" style="--r:-2deg;left:10%;bottom:4px;--c:#3b6cf6"><i>' + k + '</i>KPI</span></div><div class="wm">' + h(d.nav.split(' ')[0]) + '</div></section>';
+}
+function sortedProducts() { return S.products.slice().sort(function (a, b) { return (a.rank || 99) - (b.rank || 99); }); }
+function tierName(t) { return {'rendah':'Rendah','menengah-rendah':'Menengah-rendah','menengah':'Menengah'}[t] || t || '–'; }
+function pageHome() {
+  var t = new Date().toLocaleDateString('id-ID', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+  return homeHero(t) +
+   '<div class="grid">' + blockProducts() + blockReminder() + blockVideos() + blockComm() + blockAnn() + '</div>';
+}
+function blockProducts() {
+  var ps = sortedProducts(), x = '<section class="card wide c" style="--c:' + DCOL.riset + '"><h2>' + av('riset') + '1. Referensi 5 produk affiliate <span class="badge sp">Laporan 1 · urut potensi penjualan</span></h2>' +
+   '<p class="sub">Semua dijual di Indonesia. Peringkat adalah estimasi dari daftar ulasan dan halaman toko; angka terjual baru ada untuk produk yang menampilkannya.</p>';
+  if (!ps.length) return x + emptyBox('Belum ada laporan produk. Tim Riset mengisi blok ini setiap 2 hari.') + '</section>';
+  x += '<div class="grid">';
+  ps.forEach(function (p) {
+    var open = expanded[p.id];
+    x += '<div class="prod" data-act="toggle" data-id="' + h(p.id) + '"><div class="rank">' + h(p.rank) + '</div><div><h3>' + h(p.name) + '</h3>' +
+     '<div class="meta"><b style="color:var(--ink)">' + rp(p.price) + '</b><span class="badge">Kelas ' + h(tierName(p.tier)) + ' (usulan)</span>' +
+     (p.sold ? '<span class="badge ok">Terjual ' + num(p.sold) + '+</span>' : '<span class="badge warn">Terjual belum diketahui</span>') + '</div></div>';
+    if (open) x += '<div class="more"><p class="sub">Sumber: ' + h(p.source || '–') + '</p>' + (p.note ? '<p class="sub">' + h(p.note) + '</p>' : '') + '</div>';
+    x += '</div>';
+  });
+  return x + '</div></section>';
+}
+function blockReminder() {
+  var ps = sortedProducts(), nu = nextUpload(), today = iso(new Date()), dd = dayDiff(today, nu);
+  var sel = ps.filter(function (p) { return p.selected; })[0];
+  var x = '<section class="card wide c ' + (dd <= 1 && !sel ? 'alert' : '') + '" style="--c:' + DCOL.risk + '"><h2>' + av('risk') + '2. Pilih dan cek produk <span class="badge sp ' + (sel ? 'ok' : 'warn') + '">' + (sel ? 'Sudah dipilih' : 'Belum dipilih') + '</span></h2>';
+  var when = dd === 0 ? 'hari ini' : dd === 1 ? 'besok' : dd + ' hari lagi';
+  x += '<div class="rem ' + (!sel && dd <= 1 ? 'now' : '') + '"><div><b>Upload carousel berikutnya: ' + fdate(nu, true) + ' (' + when + ')</b><br><span class="sub">Pilih dan cek produknya paling lambat sehari sebelumnya, supaya tim sempat membuat 7 slide.</span></div></div>';
+  if (!ps.length) return x + emptyBox('Belum ada produk untuk dipilih.') + '</section>';
+  x += '<p class="sub">Centang satu produk untuk dibuatkan carousel. Lalu centang empat pemeriksaan yang sudah Anda lakukan.</p>';
+  ps.forEach(function (p) {
+    var c = p.checks || {};
+    x += '<div class="prod ' + (p.selected ? 'sel' : '') + '" style="cursor:default"><div class="rank">' + h(p.rank) + '</div><div><label class="row"><input type="radio" name="pick" data-act="pick" data-id="' + h(p.id) + '" ' + (p.selected ? 'checked' : '') + '> <h3>' + h(p.name) + '</h3></label>' +
+     '<div class="checks">' + [['price','Harga'],['stock','Stok'],['commission','Komisi'],['link','Link affiliate']].map(function (k) {
+       return '<label><input type="checkbox" data-act="chk" data-id="' + h(p.id) + '" data-k="' + k[0] + '" ' + (c[k[0]] ? 'checked' : '') + '> ' + k[1] + '</label>'; }).join('') + '</div>';
+    if (p.selected) {
+      var done = ['price','stock','commission','link'].every(function (k) { return c[k]; });
+      x += '<div class="row">' + (p.requestedAt ? '<span class="badge acc">Diminta ke tim ' + h(fdate(p.requestedAt)) + '</span>' :
+        '<button class="btn pri sm" data-act="req" data-id="' + h(p.id) + '">Minta tim buat carousel</button>') +
+        (!done ? '<span class="sub">Masih ada pemeriksaan yang belum dicentang.</span>' : '') + '</div>';
+    }
+    x += '</div></div>';
+  });
+  return x + '<p class="sub">Tim membaca permintaan ini saat sesi berikutnya. Aplikasi ini belum bisa menjalankan pekerjaan tim sendiri.</p></section>';
+}
+function fld(label, name, type, ph) { return '<label>' + label + '<input name="' + name + '" type="' + (type || 'text') + '"' + (ph ? ' placeholder="' + ph + '"' : '') + (type === 'number' ? ' inputmode="decimal" min="0" step="any"' : '') + '></label>'; }
+function formOpen(k, title) { return '<details class="add" data-k="' + k + '"><summary>' + title + '</summary>'; }
+function latestVideos() { return S.videos.slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }); }
+function blockVideos() {
+  var vs = latestVideos().slice(0, 5);
+  var x = '<section class="card wide c" style="--c:' + DCOL.analytics + '"><h2>' + av('analytics') + '3. Lima video TikTok terbaru <span class="badge sp">Analitik</span></h2>';
+  if (!vs.length) x += emptyBox('<b>Belum ada video tercatat.</b><span>Setelah video pertama tayang (rencana Rabu 25 Nov), salin angka dari TikTok Studio ke form di bawah. Aplikasi ini belum tersambung otomatis ke akun TikTok.</span>');
+  else {
+    x += '<div class="tw"><table><thead><tr><th>Video</th><th class="n">Tayangan</th><th class="n">Suka</th><th class="n">Komentar</th><th class="n">Bagikan</th><th class="n">Simpan</th><th class="n">Rata-rata tonton</th><th class="n">Selesai ditonton</th><th class="n">Follower baru</th></tr></thead><tbody>';
+    vs.forEach(function (v) {
+      x += '<tr><td><b>' + h(v.title) + '</b><br><span class="sub">' + h(fdate(v.date)) + '</span></td><td class="n">' + num(v.views) + '</td><td class="n">' + num(v.likes) + '</td><td class="n">' + num(v.comments) + '</td><td class="n">' + num(v.shares) + '</td><td class="n">' + num(v.saves) + '</td><td class="n">' + (v.avgWatch == null ? '–' : num(v.avgWatch) + ' dtk') + '</td><td class="n">' + (v.completion == null ? '–' : num(v.completion) + '%') + '</td><td class="n">' + num(v.newFollowers) + '</td></tr>';
+    });
+    x += '</tbody></table></div>';
+  }
+  x += formOpen('vid', 'Catat video') + '<form data-form="video" class="form" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">' +
+    fld('Judul', 'title') + fld('Tanggal tayang', 'date', 'date') + fld('Tayangan', 'views', 'number') + fld('Suka', 'likes', 'number') + fld('Komentar', 'comments', 'number') +
+    fld('Bagikan', 'shares', 'number') + fld('Simpan', 'saves', 'number') + fld('Rata-rata tonton (detik)', 'avgWatch', 'number') + fld('Selesai ditonton (%)', 'completion', 'number') + fld('Follower baru', 'newFollowers', 'number') +
+    '</form><div class="row" style="margin-top:10px"><button class="btn pri sm" data-act="addvideo">Simpan video</button></div>' +
+    '<p class="sub" style="margin-top:10px">Atau tempel banyak baris dari spreadsheet. Urutan kolom: judul, tanggal (2026-11-25), tayangan, suka, komentar, bagikan, simpan, rata-rata tonton (dtk), selesai ditonton (%), follower baru.</p>' +
+    '<textarea id="csvVid" placeholder="Cek tripod holder,2026-11-25,1200,80,5,12,30,14,42,9"></textarea><div class="row" style="margin-top:8px"><button class="btn sm" data-act="csvvideo">Impor baris</button></div></details></section>';
+  return x;
+}
+function commAgg() {
+  var m = {};
+  S.commissions.forEach(function (c) {
+    var k = String(c.product || '').trim().toLowerCase() + '|' + c.platform;
+    var a = m[k] || (m[k] = {product: c.product, platform: c.platform, cv: 0, cs: 0, bv: 0, bs: 0, com: 0});
+    a.cv += +c.clickVideo || 0; a.cs += +c.clickShare || 0; a.bv += +c.buyVideo || 0; a.bs += +c.buyShare || 0; a.com += +c.commission || 0;
+  });
+  return Object.keys(m).map(function (k) { return m[k]; }).sort(function (a, b) { return b.com - a.com; });
+}
+function pct(a, b) { return b > 0 ? (Math.round(a / b * 1000) / 10).toLocaleString('id-ID') + '%' : '–'; }
+function blockComm() {
+  var ag = commAgg(), T = {cv: 0, cs: 0, bv: 0, bs: 0, com: 0};
+  ag.forEach(function (a) { for (var k in T) T[k] += a[k]; });
+  var clicks = T.cv + T.cs, buys = T.bv + T.bs;
+  var x = '<section class="card wide c" style="--c:' + DCOL.analytics + '"><h2>' + av('analytics') + '4. Komisi per produk <span class="badge sp">Shopee Affiliate dan platform lain</span></h2>';
+  if (!ag.length) x += emptyBox('<b>Belum ada data komisi.</b><span>Salin angka dari dashboard Shopee Affiliate (atau platform lain) ke form di bawah. Aplikasi ini belum tersambung otomatis ke akun affiliate.</span>');
+  else {
+    x += '<div class="stats"><div class="stat"><b>' + rp(T.com) + '</b><span>Total komisi</span></div><div class="stat"><b>' + num(clicks) + '</b><span>Klik</span></div><div class="stat"><b>' + num(buys) + '</b><span>Klik yang berujung beli</span></div><div class="stat"><b>' + num(Math.max(0, clicks - buys)) + '</b><span>Klik tanpa beli (hanya melihat)</span></div><div class="stat"><b>' + pct(buys, clicks) + '</b><span>Klik jadi beli</span></div></div>';
+    x += '<div class="tw"><table><thead><tr><th>Produk</th><th class="n">Klik</th><th class="n">Beli</th><th class="n">Tanpa beli</th><th class="n">Dari video (klik / beli)</th><th class="n">Dari link bagikan (klik / beli)</th><th class="n">Komisi</th></tr></thead><tbody>';
+    ag.forEach(function (a) {
+      var c = a.cv + a.cs, b = a.bv + a.bs;
+      x += '<tr><td><b>' + h(a.product) + '</b><br><span class="sub">' + h(a.platform) + '</span></td><td class="n">' + num(c) + '</td><td class="n">' + num(b) + '</td><td class="n">' + num(Math.max(0, c - b)) + '</td><td class="n">' + num(a.cv) + ' / ' + num(a.bv) + '</td><td class="n">' + num(a.cs) + ' / ' + num(a.bs) + '</td><td class="n">' + rp(a.com) + '</td></tr>';
+    });
+    x += '</tbody></table></div>';
+  }
+  x += formOpen('com', 'Catat komisi') + '<form data-form="comm" class="form">' + fld('Tanggal', 'date', 'date') + fld('Produk', 'product') +
+    '<label>Platform<select name="platform">' + PLATFORMS.map(function (p) { return '<option>' + p + '</option>'; }).join('') + '</select></label>' +
+    fld('Klik dari video', 'clickVideo', 'number') + fld('Klik dari link bagikan', 'clickShare', 'number') + fld('Beli dari video', 'buyVideo', 'number') + fld('Beli dari link bagikan', 'buyShare', 'number') + fld('Komisi (Rp)', 'commission', 'number') +
+    '</form><div class="row" style="margin-top:10px"><button class="btn pri sm" data-act="addcomm">Simpan</button></div>' +
+    '<p class="sub" style="margin-top:10px">Atau tempel banyak baris. Urutan kolom: tanggal, produk, platform, klik video, klik link bagikan, beli video, beli link bagikan, komisi (Rp).</p>' +
+    '<textarea id="csvCom" placeholder="2026-11-26,Takara MS-04K,Shopee Affiliate,120,30,4,1,9500"></textarea><div class="row" style="margin-top:8px"><button class="btn sm" data-act="csvcomm">Impor baris</button></div></details></section>';
+  return x;
+}
+function annHtml(a, canClose) {
+  var lvl = {tinggi:'Tinggi', sedang:'Sedang', info:'Info'}[a.level] || 'Info', done = a.status === 'selesai';
+  return '<div class="ann ' + h(a.level) + ' ' + (done ? 'selesai' : '') + '"><div class="row"><span class="badge ' + (a.level === 'tinggi' ? 'bad' : a.level === 'sedang' ? 'warn' : 'acc') + '">' + lvl + '</span><b>' + h(a.title) + '</b>' + (done ? '<span class="badge ok">Selesai</span>' : '') + '</div>' +
+   '<p>' + h(a.body) + '</p>' + (a.reco ? '<p class="sub"><b>Saran:</b> ' + h(a.reco) + '</p>' : '') +
+   '<div class="row"><span class="sub">' + h(a.date ? fdate(a.date) : '') + '</span>' + (canClose ? '<button class="btn sm" data-act="annstate" data-id="' + h(a.id) + '">' + (done ? 'Buka lagi' : 'Tandai selesai') + '</button>' : '') + '</div></div>';
+}
+function sortedAnn() { var o = {tinggi:0, sedang:1, info:2}; return S.announcements.slice().sort(function (a, b) { return ((a.status === 'selesai') - (b.status === 'selesai')) || (o[a.level] - o[b.level]) || String(b.date).localeCompare(String(a.date)); }); }
+function blockAnn() {
+  var as = sortedAnn(), n = as.filter(function (a) { return a.status !== 'selesai'; }).length;
+  var x = '<section class="card wide c ' + (n ? 'alert' : '') + '" style="--c:' + DCOL.risk + '"><h2>' + av('risk') + '5. Pengumuman Risk & Solution <span class="badge sp ' + (n ? 'warn' : 'ok') + '">' + n + ' terbuka</span></h2>';
+  if (!as.length) return x + emptyBox('Belum ada pengumuman. Risk & Solution menulis di sini jika ada masalah, kendala, atau saran soal pekerjaan, divisi, staf, atau perusahaan.') + '</section>';
+  as.slice(0, 4).forEach(function (a) { x += annHtml(a, true); });
+  if (as.length > 4) x += '<a href="#risk">Lihat semua (' + as.length + ')</a>';
+  return x + '</section>';
+}
+/* ---------- KPI ---------- */
+function median(a) { a = a.filter(function (v) { return v != null && !isNaN(v); }).sort(function (x, y) { return x - y; }); if (!a.length) return null; var m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; }
+function autoVal(k) {
+  if (k.auto === 'views') return median(latestVideos().slice(0, 5).map(function (v) { return +v.views; }));
+  if (k.auto === 'konversi') { var c = 0, b = 0; S.commissions.forEach(function (x) { c += (+x.clickVideo || 0) + (+x.clickShare || 0); b += (+x.buyVideo || 0) + (+x.buyShare || 0); }); return c > 0 ? Math.round(b / c * 1000) / 10 : null; }
+  if (k.auto === 'komisi') { var lim = addDays(iso(new Date()), -6), s = 0, any = false; S.commissions.forEach(function (x) { if (String(x.date) >= lim) { s += +x.commission || 0; any = true; } }); return any ? s : null; }
+  return null;
+}
+function kpiState(k, v, target) {
+  if (target == null) return {cls: '', w: 0, txt: 'Menunggu baseline'};
+  if (v == null) return {cls: '', w: 0, txt: 'Belum diukur'};
+  if (k.dir === 'turun') return {cls: v <= target ? 'ok' : 'warn', w: v <= target ? 100 : Math.max(5, 100 - (v - target) * 20), txt: v <= target ? 'Sesuai' : 'Di atas batas'};
+  var p = target > 0 ? Math.min(100, Math.round(v / target * 100)) : 0;
+  return {cls: p >= 100 ? 'ok' : p < 50 ? 'warn' : '', w: p, txt: p + '%'};
+}
+function fmtTarget(k, v) { return v == null ? '–' : num(v) + (k.unit === '%' ? '%' : ''); }
+function kpiTable(list, full) {
+  if (!list.length) return emptyBox('Belum ada KPI untuk divisi ini.');
+  var x = '<div class="tw"><table style="min-width:' + (full ? 880 : 760) + 'px"><thead><tr><th>KPI</th><th>Jenis</th><th class="n">Target minggu</th><th class="n">Aktual minggu</th><th class="n">Target bulan</th><th class="n">Aktual bulan</th><th>Capaian minggu</th></tr></thead><tbody>';
+  list.forEach(function (k) {
+    var au = k.auto ? autoVal(k) : null, wk = k.auto ? au : k.wkActual, st = kpiState(k, wk, k.weekly);
+    x += '<tr><td><b>' + h(k.name) + '</b><br><span class="sub">' + h(k.owner) + (k.unit && k.unit !== '%' ? ' · ' + h(k.unit) : '') + '</span>' +
+      (full ? '<br><span class="sub">' + h(k.def) + ' Sumber: ' + h(k.src) + '.</span>' : '') + '</td>' +
+      '<td><span class="badge ' + (k.type === 'hasil' ? 'acc' : '') + '">' + h(k.type) + '</span></td><td class="n">' + fmtTarget(k, k.weekly) + (k.dir === 'turun' ? '<br><span class="sub">maks</span>' : '') + '</td>' +
+      '<td class="n">' + (k.auto ? (wk == null ? '–' : num(wk) + (k.unit === '%' ? '%' : '')) + '<br><span class="sub">otomatis</span>' : '<input class="kin" inputmode="decimal" data-act="kact" data-id="' + h(k.id) + '" data-f="wkActual" value="' + (k.wkActual == null ? '' : h(k.wkActual)) + '" aria-label="Aktual minggu ' + h(k.name) + '">') + '</td>' +
+      '<td class="n">' + fmtTarget(k, k.monthly) + '</td>' +
+      '<td class="n">' + (k.auto ? '–' : '<input class="kin" inputmode="decimal" data-act="kact" data-id="' + h(k.id) + '" data-f="moActual" value="' + (k.moActual == null ? '' : h(k.moActual)) + '" aria-label="Aktual bulan ' + h(k.name) + '">') + '</td>' +
+      '<td><div class="bar ' + st.cls + '"><i style="width:' + st.w + '%"></i></div><span class="sub">' + h(st.txt) + '</span></td></tr>';
+  });
+  return x + '</tbody></table></div>';
+}
+function kpisOf(id) { return S.kpis.filter(function (k) { return k.div === id; }).sort(function (a, b) { return String(a.id).localeCompare(String(b.id)); }); }
+function pageKpi() {
+  var x = head('KPI & Target', 'Dikumpulkan Risk & Solution dari semua divisi dan staf. Target mingguan = 7 hari, bulanan = 30 hari, dihitung dari tanggal mulai ' + fdate(cfg().start) + '.', S.kpis.length + ' KPI');
+  x += '<section class="card"><h2>Cara KPI disusun</h2><div class="cols">' +
+   '<div class="col"><h3>Proses</h3><p class="sub">Hal yang dikerjakan tim dan sepenuhnya bisa dikendalikan, misalnya jumlah video selesai. Target sudah diisi.</p></div>' +
+   '<div class="col"><h3>Mutu</h3><p class="sub">Seberapa benar dan lengkap hasilnya, misalnya persentase naskah yang lolos periksa fakta. Target sudah diisi.</p></div>' +
+   '<div class="col"><h3>Hasil</h3><p class="sub">Dampak di akun: tayangan, penonton selesai, klik jadi beli, komisi. Target belum diisi karena belum ada data akun. Diisi dari baseline 14 hari (' + fdate(cfg().start) + ' sampai ' + fdate(addDays(cfg().start, 13)) + ').</p></div></div>' +
+   '<p class="sub">Setiap KPI punya definisi dan sumber data. Kolom aktual diisi tim atau Anda. KPI bertanda otomatis dihitung dari data video dan komisi di Beranda.</p></section>';
+  DIVS.forEach(function (d) {
+    var l = kpisOf(d.id), meas = l.filter(function (k) { var v = k.auto ? autoVal(k) : k.wkActual; return k.weekly != null && v != null; });
+    var okc = meas.filter(function (k) { var v = k.auto ? autoVal(k) : k.wkActual; return k.dir === 'turun' ? v <= k.weekly : v >= k.weekly; }).length;
+    x += '<section class="card"><h2>' + h(d.name) + ' <span class="badge">' + l.length + ' KPI · ' + okc + ' dari ' + meas.length + ' terukur capai target minggu</span></h2>' + kpiTable(l, true) + '</section>';
+  });
+  return x;
+}
+/* ---------- Divisi ---------- */
+var TS = [['todo','Antre'],['doing','Dikerjakan'],['tunggu','Menunggu Tito'],['done','Selesai']];
+function tasksCard(id) {
+  var l = S.tasks.filter(function (t) { return t.div === id; });
+  var x = '<section class="card wide"><h2>Pekerjaan divisi <span class="badge">' + l.filter(function (t) { return t.status !== 'done'; }).length + ' belum selesai</span></h2>';
+  if (!l.length) x += emptyBox('Belum ada pekerjaan tercatat untuk divisi ini.');
+  else {
+    x += '<div class="cols">';
+    TS.forEach(function (s, i) {
+      var c = l.filter(function (t) { return t.status === s[0]; });
+      x += '<div class="col"><h3>' + s[1] + ' (' + c.length + ')</h3>';
+      c.forEach(function (t) {
+        x += '<div class="task"><b>' + h(t.title) + '</b>' + (t.note ? '<span class="sub">' + h(t.note) + '</span>' : '') + '<div class="row">' +
+          (i > 0 ? '<button class="btn sm" data-act="tmove" data-dir="-1" data-id="' + h(t.id) + '" aria-label="Mundur">←</button>' : '') +
+          (i < 3 ? '<button class="btn sm" data-act="tmove" data-dir="1" data-id="' + h(t.id) + '" aria-label="Maju">→</button>' : '') + '</div></div>';
+      });
+      x += '</div>';
+    });
+    x += '</div>';
+  }
+  return x + formOpen('task-' + id, 'Tambah pekerjaan') + '<form data-form="task" class="form">' + fld('Judul', 'title') + fld('Catatan', 'note') +
+    '<label>Status<select name="status">' + TS.map(function (s) { return '<option value="' + s[0] + '">' + s[1] + '</option>'; }).join('') + '</select></label></form>' +
+    '<div class="row" style="margin-top:10px"><button class="btn pri sm" data-act="addtask" data-div="' + id + '">Tambah</button></div></details></section>';
+}
+function staffCard(d) {
+  var x = '<section class="card"><h2>Staf <span class="badge">' + d.staff.length + ' aktif</span></h2>';
+  d.staff.forEach(function (s) { x += '<div class="rem">' + av(d.id, 38) + '<div><b>' + h(s[0]) + '</b><br><span class="sub">' + h(s[1]) + '</span></div></div>'; });
+  x += '<p class="sub">Menyusul setelah baseline 14 hari:</p><div class="chips">' + d.later.map(function (n) { return '<span class="badge">' + h(n) + '</span>'; }).join('') + '</div></section>';
+  return x;
+}
+function specialCard(id) {
+  var ps = sortedProducts(), x = '';
+  if (id === 'analytics') {
+    var c = cfg(), el = Math.max(0, Math.min(14, dayDiff(c.start, iso(new Date())) + 1)), vs = latestVideos();
+    var cp = median(vs.map(function (v) { return v.completion == null ? null : +v.completion; }));
+    x = '<section class="card"><h2>Baseline 14 hari <span class="badge">' + el + ' dari 14 hari</span></h2><div class="bar"><i style="width:' + Math.round(el / 14 * 100) + '%"></i></div>' +
+      '<p class="sub">Mulai ' + fdate(c.start, true) + ', selesai ' + fdate(addDays(c.start, 13), true) + '. Setelah itu target hasil di halaman KPI diisi dari angka nyata akun.</p>' +
+      '<div class="stats"><div class="stat"><b>' + vs.length + '</b><span>Video tercatat</span></div><div class="stat"><b>' + num(median(vs.map(function (v) { return +v.views; }))) + '</b><span>Median tayangan</span></div><div class="stat"><b>' + (cp == null ? '–' : num(cp) + '%') + '</b><span>Median selesai ditonton</span></div></div></section>';
+  } else if (id === 'riset') {
+    var cnt = function (k) { return ps.filter(function (p) { return p.checks && p.checks[k]; }).length; };
+    x = '<section class="card"><h2>Aturan laporan <span class="badge">tiap 2 hari</span></h2><p class="sub">5 produk fotografi yang dijual di Indonesia, urut potensi penjualan. Anda yang memilih satu produk dan memeriksanya.</p>' +
+      '<div class="rem"><div><b>Kelas harga (usulan, belum Anda tetapkan)</b><br><span class="sub">Rendah di bawah Rp100.000 · Menengah-rendah Rp100.000 sampai Rp300.000 · Menengah Rp300.000 sampai Rp700.000</span></div></div>' +
+      '<div class="stats"><div class="stat"><b>' + cnt('price') + '/' + ps.length + '</b><span>Harga dicek Anda</span></div><div class="stat"><b>' + cnt('stock') + '/' + ps.length + '</b><span>Stok dicek</span></div><div class="stat"><b>' + cnt('commission') + '/' + ps.length + '</b><span>Komisi dicek</span></div></div></section>';
+  } else if (id === 'marketing') {
+    x = '<section class="card wide"><h2>Jadwal posting tetap <span class="badge warn">Sementara</span></h2>' +
+      '<p class="sub">Setiap hari, jam WIB. Dasarnya pola umum jam aktif pengguna di Indonesia (pagi sebelum kerja, istirahat siang, malam setelah pulang), belum data akun Anda. Slot malam sengaja dipakai untuk carousel produk karena itu waktu orang membandingkan harga, ini masih dugaan yang diuji.</p>';
+    SLOTS.forEach(function (s) { x += '<div class="slot"><b>' + s.t + '</b><div><b style="font-weight:600">' + h(s.k) + '</b><br><span class="sub">' + h(s.why) + '</span></div></div>'; });
+    var u = uploadDates().slice(0, 5);
+    x += '<div class="rem"><div><b>Kalender upload carousel (tiap 2 hari, 19:30)</b><br><span class="sub">' + u.map(function (d) { return fdate(d, true); }).join(' · ') + '</span></div></div>' +
+      '<div class="rem now"><div><b>Cara menguji dan menetapkan</b><br><span class="sub">Jadwal dipakai apa adanya selama 14 hari. Lalu Analytics membaca TikTok Studio (Followers, jam paling aktif) dan membandingkan tayangan 60 menit pertama tiap slot. Dua slot terlemah diganti dan jadwal dikunci lagi.</span></div></div></section>';
+  } else if (id === 'konten') {
+    var sel = ps.filter(function (p) { return p.selected; })[0];
+    x = '<section class="card"><h2>Permintaan carousel <span class="badge ' + (sel && sel.requestedAt ? 'acc' : 'warn') + '">' + (sel ? (sel.requestedAt ? 'Diminta' : 'Dipilih') : 'Menunggu Tito') + '</span></h2>' +
+      (sel ? '<div class="rem"><div><b>' + h(sel.name) + '</b><br><span class="sub">' + rp(sel.price) + (sel.requestedAt ? ' · diminta ' + fdate(sel.requestedAt) : ' · belum dikirim ke tim') + '</span></div></div>' : emptyBox('Belum ada produk yang Anda pilih. Pilih di Beranda, blok 2.')) +
+      '<p class="sub">Standar: carousel 7 slide, foto resmi merek, link affiliate Anda. Video: tanpa wajah dan tanpa rekaman produk, hanya nama, spesifikasi, atau foto resmi bila perlu.</p></section>';
+  } else if (id === 'risk') {
+    var as = sortedAnn();
+    x = '<section class="card wide"><h2>Pengumuman <span class="badge">' + as.length + '</span></h2>' + (as.length ? as.map(function (a) { return annHtml(a, true); }).join('') : emptyBox('Belum ada pengumuman.')) +
+      formOpen('ann', 'Tulis pengumuman') + '<form data-form="ann" class="form">' + fld('Judul', 'title') + fld('Isi', 'body') + fld('Saran', 'reco') +
+      '<label>Tingkat<select name="level"><option value="tinggi">Tinggi</option><option value="sedang">Sedang</option><option value="info">Info</option></select></label></form>' +
+      '<div class="row" style="margin-top:10px"><button class="btn pri sm" data-act="addann">Terbitkan</button></div></details></section>';
+  }
+  return x;
+}
+function pageDiv(id) {
+  var d = DIVS.filter(function (v) { return v.id === id; })[0];
+  var sp = specialCard(id), wide = sp.indexOf('card wide') >= 0;
+  var x = divHero(d) + '<div class="grid">';
+  if (id === 'riset') x += blockProducts();
+  x += sp + (wide ? '' : '') + staffCard(d) + tasksCard(id) + '<section class="card wide"><h2>KPI divisi dan staf</h2>' + kpiTable(kpisOf(id), false) + '<a href="#kpi">Lihat definisi dan sumber data</a></section></div>';
+  return x;
+}
+/* ---------- Kantor & Akses ---------- */
+function pageKantor() {
+  var wait = S.tasks.filter(function (t) { return t.status === 'tunggu'; }).length;
+  var x = '<div class="head"><div><h1>Kantor live</h1><p>Karakter tiap divisi bekerja sesuai papan pekerjaan. Yang menunggu keputusan Anda berjalan ke Ruang Tito sambil membawa tanda !. Klik karakter untuk melihat tugasnya.</p></div><span class="live"><i></i>LIVE · ' + wait + ' menunggu ACC</span></div>';
+  x += '<div class="officewrap">' + officeSvg() + '</div>';
+  if (officeSel) { var p = officeSel.split(':'), d = DIVS.filter(function (v) { return v.id === p[0]; })[0], s = d && d.staff[+p[1]];
+    if (s) { var st = stat(d.id); x += '<section class="card c" style="--c:' + DCOL[d.id] + '"><h2>' + av(d.id, 44) + h(s[0]) + ' <span class="badge sp ' + (st.wait.length && +p[1] === 0 ? 'warn' : st.doing.length ? 'acc' : '') + '">' + (st.wait.length && +p[1] === 0 ? 'Menunggu keputusan Tito' : st.doing.length ? 'Sedang bekerja' : 'Tidak ada pekerjaan aktif') + '</span></h2><p>' + h(s[1]) + '</p><div class="sub">Divisi ' + h(d.name) + '. Pekerjaan aktif: ' + (st.doing.concat(st.wait).map(function (t) { return h(t.title); }).join('; ') || 'tidak ada') + '.</div><a href="#' + d.id + '">Buka dashboard divisi</a></section>'; } }
+  x += '<section class="card"><h2>Cara membaca kantor</h2><div class="cols"><div class="col"><h3>Mengetik</h3><p class="sub">Divisi punya pekerjaan berstatus Dikerjakan. Layar menyala dan lengan bergerak.</p></div><div class="col"><h3>Berjalan dengan !</h3><p class="sub">Ada pekerjaan Menunggu Tito. Kepala divisi berjalan ke Ruang Tito.</p></div><div class="col"><h3>Diam</h3><p class="sub">Tidak ada pekerjaan aktif. Layar redup.</p></div></div><p class="sub">Animasi per divisi, bukan per orang: semua staf satu divisi memakai status yang sama, kecuali kepala divisi yang berjalan ke Ruang Tito. Kantor 3D isometrik lama masih ada: <a href="' + KANTOR_URL + '" target="_blank" rel="noopener">buka</a>.</p></section>';
+  return x;
+}
+function pageAkses() {
+  return head('Akses & login', 'Siapa yang bisa membuka dan mengubah aplikasi ini.', who.role ? who.role : '') +
+   '<div class="grid"><section class="card"><h2>Anda sekarang</h2><div class="rem"><div><b>' + h(who.name || 'Tidak diketahui') + '</b><br><span class="sub">' + (who.role ? 'Peran: ' + h(who.role) : 'Peran belum terbaca di tampilan ini.') + '</span></div></div></section>' +
+   '<section class="card"><h2>Login dan daftar</h2><p>Aplikasi ini memakai akun Claude Anda sebagai login. Belum ada form daftar atau kata sandi buatan sendiri.</p><p class="sub">Untuk menambah orang (misalnya admin atau editor): buka menu Bagikan di halaman ini, undang lewat email, lalu pilih hak akses (lihat saja, atau bisa mengubah). Orang yang diundang masuk dengan akun Claude mereka.</p></section>' +
+   '<section class="card wide"><h2>Pasang di HP, tablet, dan laptop</h2><div class="cols"><div class="col"><h3>Android (Chrome)</h3><p class="sub">Menu titik tiga, lalu Tambahkan ke layar utama.</p></div><div class="col"><h3>iPhone dan iPad (Safari)</h3><p class="sub">Tombol Bagikan, lalu Tambahkan ke Layar Utama.</p></div><div class="col"><h3>Windows (Chrome atau Edge)</h3><p class="sub">Menu titik tiga, lalu Instal atau Simpan pintasan.</p></div><div class="col"><h3>Mac (Safari atau Chrome)</h3><p class="sub">Safari: Berkas, lalu Tambahkan ke Dock. Chrome: menu, lalu Simpan dan bagikan.</p></div></div><p class="sub">Ini membuat ikon pintasan yang membuka halaman yang sama. Aplikasi tetap butuh internet dan login, dan tidak berjalan offline.</p></section></div>';
+}
+/* ---------- Aksi ---------- */
+function nv(v) { if (v == null) return null; v = String(v).trim().replace(/\./g, '').replace(',', '.'); return v === '' || isNaN(v) ? null : +v; }
+function formVals(name) { var f = document.querySelector('form[data-form="' + name + '"]'), o = {}; if (!f) return o; new FormData(f).forEach(function (v, k) { o[k] = v; }); return o; }
+function splitRows(t) { return String(t || '').split(/\r?\n/).map(function (l) { return l.trim(); }).filter(Boolean).map(function (l) { return l.split(/\t|;|,(?=(?:[^"]*"[^"]*")*[^"]*$)/).map(function (c) { return c.trim().replace(/^"|"$/g, ''); }); }); }
+function addAll(name, docs, label) { if (!docs.length) { toast('Tidak ada baris yang bisa dibaca'); return; }
+  var n = 0; Promise.all(docs.map(function (d) { return col(name).add(d).then(function () { n++; }); })).then(function () { toast(n + ' ' + label + ' disimpan'); }).catch(function (e) { toast('Gagal menyimpan: ' + ((e && e.message) || 'coba lagi')); }); }
+function today() { return iso(new Date()); }
+function go(act, el) {
+  var id = el.dataset.id;
+  if (act === 'toggle') { expanded[id] = !expanded[id]; render(); return; }
+  if (act === 'who') { officeSel = el.dataset.div + ':' + el.dataset.i; render(); return; }
+  if (!db) { toast('Penyimpanan belum tersedia'); return; }
+  if (act === 'req') write(col('products').doc(id).update({requestedAt: today()})).then(function () { toast('Permintaan tercatat untuk tim'); });
+  else if (act === 'addvideo') { var v = formVals('video');
+    if (!v.title || !v.date) { toast('Isi judul dan tanggal tayang'); return; }
+    write(col('videos').add({title: v.title, date: v.date, views: nv(v.views), likes: nv(v.likes), comments: nv(v.comments), shares: nv(v.shares), saves: nv(v.saves), avgWatch: nv(v.avgWatch), completion: nv(v.completion), newFollowers: nv(v.newFollowers)})).then(function () { document.querySelector('form[data-form="video"]').reset(); toast('Video disimpan'); }); }
+  else if (act === 'csvvideo') { var rows = splitRows($('csvVid').value).filter(function (r) { return r.length >= 3 && /^\d{4}-\d{2}-\d{2}$/.test(r[1]); });
+    addAll('videos', rows.map(function (r) { return {title: r[0], date: r[1], views: nv(r[2]), likes: nv(r[3]), comments: nv(r[4]), shares: nv(r[5]), saves: nv(r[6]), avgWatch: nv(r[7]), completion: nv(r[8]), newFollowers: nv(r[9])}; }), 'video'); }
+  else if (act === 'addcomm') { var c = formVals('comm');
+    if (!c.product || !c.date) { toast('Isi tanggal dan produk'); return; }
+    write(col('commissions').add({date: c.date, product: c.product, platform: c.platform, clickVideo: nv(c.clickVideo) || 0, clickShare: nv(c.clickShare) || 0, buyVideo: nv(c.buyVideo) || 0, buyShare: nv(c.buyShare) || 0, commission: nv(c.commission) || 0})).then(function () { document.querySelector('form[data-form="comm"]').reset(); toast('Komisi disimpan'); }); }
+  else if (act === 'csvcomm') { var rs = splitRows($('csvCom').value).filter(function (r) { return r.length >= 8 && /^\d{4}-\d{2}-\d{2}$/.test(r[0]); });
+    addAll('commissions', rs.map(function (r) { return {date: r[0], product: r[1], platform: r[2] || 'Lainnya', clickVideo: nv(r[3]) || 0, clickShare: nv(r[4]) || 0, buyVideo: nv(r[5]) || 0, buyShare: nv(r[6]) || 0, commission: nv(r[7]) || 0}; }), 'baris komisi'); }
+  else if (act === 'annstate') { var a = byId(S.announcements, id); if (a) write(col('announcements').doc(id).update({status: a.status === 'selesai' ? 'terbuka' : 'selesai'})); }
+  else if (act === 'addann') { var n = formVals('ann'); if (!n.title) { toast('Isi judul'); return; }
+    write(col('announcements').add({title: n.title, body: n.body || '', reco: n.reco || '', level: n.level, status: 'terbuka', date: today()})).then(function () { document.querySelector('form[data-form="ann"]').reset(); toast('Pengumuman terbit'); }); }
+  else if (act === 'addtask') { var t = formVals('task'); if (!t.title) { toast('Isi judul'); return; }
+    write(col('tasks').add({div: el.dataset.div, title: t.title, note: t.note || '', status: t.status, date: today()})).then(function () { document.querySelector('form[data-form="task"]').reset(); toast('Pekerjaan ditambah'); }); }
+  else if (act === 'tmove') { var tk = byId(S.tasks, id); if (!tk) return; var ks = TS.map(function (s) { return s[0]; }), i = ks.indexOf(tk.status) + (+el.dataset.dir);
+    if (i >= 0 && i < ks.length) write(col('tasks').doc(id).update({status: ks[i]})); }
+}
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-act]'); if (!el || el.tagName === 'INPUT') return;
+  if (el.tagName === 'A') return; go(el.dataset.act, el);
+});
+document.addEventListener('change', function (e) {
+  var el = e.target, act = el.dataset && el.dataset.act; if (!act || !db) return;
+  var id = el.dataset.id;
+  if (act === 'pick') { S.products.forEach(function (p) { if (p.selected && p.id !== id) write(col('products').doc(p.id).update({selected: false, requestedAt: null})); }); write(col('products').doc(id).update({selected: true})); }
+  else if (act === 'chk') { var p = byId(S.products, id), ch = Object.assign({}, p && p.checks); ch[el.dataset.k] = el.checked; write(col('products').doc(id).update({checks: ch})); }
+  else if (act === 'kact') { var o = {}; o[el.dataset.f] = nv(el.value); write(col('kpis').doc(id).update(o)).then(function () { toast('KPI diperbarui'); }); }
+});
+document.addEventListener('focusout', function () { if (dirty) setTimeout(function () { if (dirty && !typing()) render(); }, 60); });
+document.addEventListener('toggle', function (e) { var d = e.target; if (d && d.matches && d.matches('details.add')) openForms[d.dataset.k] = d.open; }, true);
+window.addEventListener('hashchange', function () { render(); window.scrollTo(0, 0); });
+var themes = ['auto', 'light', 'dark'], ti = 0;
+function applyTheme() { var r = document.documentElement; if (themes[ti] === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', themes[ti]); $('themebtn').textContent = 'Tema: ' + ['otomatis', 'terang', 'gelap'][ti]; }
+$('themebtn').addEventListener('click', function () { ti = (ti + 1) % 3; applyTheme(); try { localStorage.setItem('tito-theme', String(ti)); } catch (e) {} });
+try { var sv = localStorage.getItem('tito-theme'); if (sv) ti = +sv % 3; } catch (e) {}
+applyTheme();
+init();
+</script>
+<script>
+function pageAkses() {
+  return head('Akses & data', 'Aplikasi ini berjalan di perangkat Anda. Data tersimpan di perangkat ini saja.', 'Terpasang') +
+   '<div class="grid"><section class="card"><h2>Login</h2><p>Belum ada login atau daftar. Siapa pun yang memegang perangkat ini bisa membuka dan mengubah data. Pasang kunci layar perangkat Anda. Akun bersama dan sinkron antar perangkat butuh server yang belum ada di paket ini.</p></section>' +
+   '<section class="card"><h2>Pindahkan data antar perangkat</h2><p class="sub">Ekspor di satu perangkat, impor di perangkat lain. Impor menimpa data di perangkat tujuan.</p><div class="row"><button class="btn pri" data-act="export">Ekspor data</button><label class="btn dark" style="cursor:pointer">Impor data<input type="file" accept="application/json,.json" id="impf" hidden></label></div><p class="sub" id="impmsg"></p></section>' +
+   '<section class="card wide"><h2>Pasang aplikasi</h2><div class="cols"><div class="col"><h3>Android (Chrome)</h3><p class="sub">Menu titik tiga, lalu Instal aplikasi.</p></div><div class="col"><h3>iPhone dan iPad (Safari)</h3><p class="sub">Tombol Bagikan, lalu Tambahkan ke Layar Utama.</p></div><div class="col"><h3>Windows (Chrome atau Edge)</h3><p class="sub">Ikon instal di ujung kolom alamat, atau menu, lalu Instal.</p></div><div class="col"><h3>Mac (Chrome atau Safari)</h3><p class="sub">Chrome: ikon instal di kolom alamat. Safari: Berkas, lalu Tambahkan ke Dock.</p></div></div></section></div>';
+}
+document.addEventListener('click', function (e) { var b = e.target.closest('[data-act="export"]'); if (!b) return;
+  var blob = new Blob([TITO_EXPORT()], {type: 'application/json'}), a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'tito-affiliator-' + iso(new Date()) + '.json'; document.body.appendChild(a); a.click(); a.remove(); toast('Cadangan diunduh'); });
+document.addEventListener('change', function (e) { if (e.target.id !== 'impf' || !e.target.files[0]) return; var r = new FileReader(); r.onload = function () { try { TITO_IMPORT(String(r.result)); } catch (x) { var m = $('impmsg'); if (m) m.textContent = 'Gagal: ' + x.message; } }; r.readAsText(e.target.files[0]); });
+if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+</script>
+</body></html>
